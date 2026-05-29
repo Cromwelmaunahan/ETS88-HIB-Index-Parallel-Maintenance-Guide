@@ -1,4 +1,4 @@
-,Test Function Name:     TF_Inductor_Diode_Test
+Test Function Name:     TF_Inductor_Diode_Test
 CPP File Name:          Inductor_Diode_Check.cpp
 
 // ============================================================

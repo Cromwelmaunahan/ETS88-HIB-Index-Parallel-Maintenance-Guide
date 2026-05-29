@@ -7,20 +7,20 @@ CPP File Name:          Gate_Module_Test.cpp
 // ============================================================
 //  Test Number                                  | OldHIB-A                                                                 | NewHIB-A
 //  -------------------------------------------------|--------------------------------------------------------------------------|--------------------------------------------------------------------------
-//  TestLimits(&GateH)#1                             | APU12 CH1: Force Current=0mA, Measure Voltage | APU12 CH1: Force Current=0mA, Measure Voltage
-//  TestLimits(&GateL)#1                             | APU12 CH1: Force Current AWG=0mA, Measure Voltage ADC, APU12 CH7: Force Voltage AWG = 1V     | APU12 CH1: Force Current AWG=0mA, Measure Voltage ADC, APU12 CH7: Force Voltage AWG = 1V
-//  TestLimits(&ResisCalc)#1                         | APU12 CH4: Force Voltage=15V, APU12 CH5: Force Voltage = 0V, APU12 CH1: Force Voltage = 20V, Measure Current | APU12 CH4: Force Voltage=15V, APU12 CH5: Force Voltage = 0V, APU12 CH1: Force Voltage = 20V, Measure Current
-//  TestLimits(&ResisCalc)#2                         | APU12 CH4: Force Voltage=15V, APU12 CH5: Force Voltage = 0V, APU12 CH1: Force Voltage = 20V, Measure Current | APU12 CH4: Force Voltage=15V, APU12 CH5: Force Voltage = 0V, APU12 CH1: Force Voltage = 20V, Measure Current
-//  TestLimits(&ResisCalc)#3                         | APU12 CH4: Force Voltage=15V, APU12 CH5: Force Voltage = 0V, APU12 CH1: Force Voltage = 20V, Measure Current | APU12 CH4: Force Voltage=15V, APU12 CH5: Force Voltage = 0V, APU12 CH1: Force Voltage = 20V, Measure Current
-//  TestLimits(&ResisCalc)#4                         | APU12 CH4: Force Voltage=15V, APU12 CH5: Force Voltage = 0V, APU12 CH1: Force Voltage = 20V, Measure Current | APU12 CH4: Force Voltage=15V, APU12 CH5: Force Voltage = 0V, APU12 CH1: Force Voltage = 20V, Measure Current
-//  TestLimits(&CapH)                                | APU12 CH4: Force Current AWG = 0mA, Measure Voltage ADC        | APU12 CH4: Force Current AWG = 0mA, Measure Voltage ADC
-//  TestLimits(&CapL)                                |APU12 CH5: Force Current AWG = 0mA, Measure Voltage ADC        |APU12 CH5: Force Current AWG = 0mA, Measure Voltage ADC
-//  TestLimits(&GateH)#2                             | [SKIPPED]                                                                | APU12 CH4: Force Current = 0mA, Measure Voltage
-//  TestLimits(&GateL)#2                             | [SKIPPED]                                                                | APU12 CH5: Force Current = 0mA, Measure Voltage
-//  TestLimits(&GateH)#3                             | [SKIPPED]                                                                | APU12 CH4: Force Current = 0mA, Measure Voltage
-//  TestLimits(&GateL)#3                             | [SKIPPED]                                                                | APU12 CH5: Force Current = 0mA, Measure Voltage
-//  TestLimits(&GateH)#4                             | [SKIPPED]                                                                | APU12 CH4: Force Current = 0mA, Measure Voltage
-//  TestLimits(&GateL)#4                             | [SKIPPED]                                                                | APU12 CH5: Force Current = 0mA, Measure Voltage
+//  14000                         | APU12 CH1: Force Current=0mA, Measure Voltage | APU12 CH1: Force Current=0mA, Measure Voltage
+//  14001                         | APU12 CH1: Force Current AWG=0mA, Measure Voltage ADC, APU12 CH7: Force Voltage AWG = 1V     | APU12 CH1: Force Current AWG=0mA, Measure Voltage ADC, APU12 CH7: Force Voltage AWG = 1V
+//  14002                         | APU12 CH4: Force Voltage=15V, APU12 CH5: Force Voltage = 0V, APU12 CH1: Force Voltage = 20V, Measure Current | APU12 CH4: Force Voltage=15V, APU12 CH5: Force Voltage = 0V, APU12 CH1: Force Voltage = 20V, Measure Current
+//  14003                         | APU12 CH4: Force Voltage=15V, APU12 CH5: Force Voltage = 0V, APU12 CH1: Force Voltage = 20V, Measure Current | APU12 CH4: Force Voltage=15V, APU12 CH5: Force Voltage = 0V, APU12 CH1: Force Voltage = 20V, Measure Current
+//  14004                         | APU12 CH4: Force Voltage=15V, APU12 CH5: Force Voltage = 0V, APU12 CH1: Force Voltage = 20V, Measure Current | APU12 CH4: Force Voltage=15V, APU12 CH5: Force Voltage = 0V, APU12 CH1: Force Voltage = 20V, Measure Current
+//  14005                         | APU12 CH4: Force Voltage=15V, APU12 CH5: Force Voltage = 0V, APU12 CH1: Force Voltage = 20V, Measure Current | APU12 CH4: Force Voltage=15V, APU12 CH5: Force Voltage = 0V, APU12 CH1: Force Voltage = 20V, Measure Current
+//  14006                         | APU12 CH4: Force Current AWG = 0mA, Measure Voltage ADC        | APU12 CH4: Force Current AWG = 0mA, Measure Voltage ADC
+//  14007                         |APU12 CH5: Force Current AWG = 0mA, Measure Voltage ADC        |APU12 CH5: Force Current AWG = 0mA, Measure Voltage ADC
+//  14008                         | [SKIPPED]                                                                | APU12 CH4: Force Current = 0mA, Measure Voltage
+//  14009                         | [SKIPPED]                                                                | APU12 CH5: Force Current = 0mA, Measure Voltage
+//  14010                         | [SKIPPED]                                                                | APU12 CH4: Force Current = 0mA, Measure Voltage
+//  14011                         | [SKIPPED]                                                                | APU12 CH5: Force Current = 0mA, Measure Voltage
+//  14012                         | [SKIPPED]                                                                | APU12 CH4: Force Current = 0mA, Measure Voltage
+//  14013                         | [SKIPPED]                                                                | APU12 CH5: Force Current = 0mA, Measure Voltage
 // ============================================================
 
 // ============================================================
@@ -37,20 +37,20 @@ CPP File Name:          Gate_Module_Test.cpp
 // ============================================================
 //  Test Number                                  | OldHIB-A                                              | NewHIB-A
 //  -------------------------------------------------|-------------------------------------------------------|-------------------------------------------------------
-//  TestLimits(&GateH)#1                             | K100,K064,K065,K066,K067,K68_K69,K040,K041,K004,KS3 | K100,KBC7,KBC8,KHS3,KGS1,KGS2,KGS8_KGS9,K64,K65,K66,K67,KA68_KA69,KA40,KA41,KA4,GDR_PWR
-//  TestLimits(&GateL)#1                             | K100,K064,K065,K066,K067,K68_K69,K040,K041,K004,KS3 | K100,KBC7,KBC8,KHS3,KGS1,KGS2,KGS8_KGS9,K64,K65,K66,K67,KA68_KA69,KA40,KA41,KA4,GDR_PWR
-//  TestLimits(&ResisCalc)#1                         | K100,K065,K066,K067,K68_K69,K040,K041,K004,KS3      | K100,KBC7,KBC8,KHS3,KGS1,KGS2,KGS8_KGS9,K65,K66,K67,KA68_KA69,KA40,KA41,KA4,GDR_PWR
-//  TestLimits(&ResisCalc)#2                         | K100,K064,K066,K067,K68_K69,K040,K041,K004,KS3      | K100,KBC7,KBC8,KHS3,KGS1,KGS2,KGS8_KGS9,K64,K66,K67,KA68_KA69,KA40,KA41,KA4,GDR_PWR
-//  TestLimits(&ResisCalc)#3                         | K100,K064,K065,K067,K68_K69,K040,K041,K004,KS3      | K100,KBC7,KBC8,KHS3,KGS1,KGS2,KGS8_KGS9,K64,K65,K67,KA68_KA69,KA40,KA41,KA4,GDR_PWR
-//  TestLimits(&ResisCalc)#4                         | K100,K064,K065,K066,K68_K69,K040,K041,K004,KS3      | K100,KBC7,KBC8,KHS3,KGS1,KGS2,KGS8_KGS9,K64,K65,K66,KA68_KA69,KA40,KA41,KA4,GDR_PWR
-//  TestLimits(&CapH)                                | K100                                                  | K100
-//  TestLimits(&CapL)                                | K100                                                  | K100
-//  TestLimits(&GateH)#2                             | [SKIPPED]                                             | KGS1,KGS2,KGS8_KGS9,K100,GDR_PWR
-//  TestLimits(&GateL)#2                             | [SKIPPED]                                             | KGS1,KGS2,KGS8_KGS9,K100
-//  TestLimits(&GateH)#3                             | [SKIPPED]                                             | KGS4_KGS6,KGS5_KGS7,KGS1,KGS2,KGS8_KGS9,K100
-//  TestLimits(&GateL)#3                             | [SKIPPED]                                             | KGS1,KGS2,KGS8_KGS9,K100,KGS5_KGS7
-//  TestLimits(&GateH)#4                             | [SKIPPED]                                             | KGS1,KGS2,KGS8_KGS9,K100,KGS4_KGS6
-//  TestLimits(&GateL)#4                             | [SKIPPED]                                             | KGS1,KGS2,KGS8_KGS9,K100
+//  14000                      | K100,K064,K065,K066,K067,K68_K69,K040,K041,K004,KS3 | K100,KBC7,KBC8,KHS3,KGS1,KGS2,KGS8_KGS9,K64,K65,K66,K67,KA68_KA69,KA40,KA41,KA4,GDR_PWR
+//  14001                      | K100,K064,K065,K066,K067,K68_K69,K040,K041,K004,KS3 | K100,KBC7,KBC8,KHS3,KGS1,KGS2,KGS8_KGS9,K64,K65,K66,K67,KA68_KA69,KA40,KA41,KA4,GDR_PWR
+//  14002                      | K100,K065,K066,K067,K68_K69,K040,K041,K004,KS3      | K100,KBC7,KBC8,KHS3,KGS1,KGS2,KGS8_KGS9,K65,K66,K67,KA68_KA69,KA40,KA41,KA4,GDR_PWR
+//  14003                      | K100,K064,K066,K067,K68_K69,K040,K041,K004,KS3      | K100,KBC7,KBC8,KHS3,KGS1,KGS2,KGS8_KGS9,K64,K66,K67,KA68_KA69,KA40,KA41,KA4,GDR_PWR
+//  14004                      | K100,K064,K065,K067,K68_K69,K040,K041,K004,KS3      | K100,KBC7,KBC8,KHS3,KGS1,KGS2,KGS8_KGS9,K64,K65,K67,KA68_KA69,KA40,KA41,KA4,GDR_PWR
+//  14005                      | K100,K064,K065,K066,K68_K69,K040,K041,K004,KS3      | K100,KBC7,KBC8,KHS3,KGS1,KGS2,KGS8_KGS9,K64,K65,K66,KA68_KA69,KA40,KA41,KA4,GDR_PWR
+//  14006                      | K100                                                  | K100
+//  14007                      | K100                                                  | K100
+//  14008                      | [SKIPPED]                                             | KGS1,KGS2,KGS8_KGS9,K100,GDR_PWR
+//  14009                      | [SKIPPED]                                             | KGS1,KGS2,KGS8_KGS9,K100
+//  14010                      | [SKIPPED]                                             | KGS4_KGS6,KGS5_KGS7,KGS1,KGS2,KGS8_KGS9,K100
+//  14011                      | [SKIPPED]                                             | KGS1,KGS2,KGS8_KGS9,K100,KGS5_KGS7
+//  14012                      | [SKIPPED]                                             | KGS1,KGS2,KGS8_KGS9,K100,KGS4_KGS6
+//  14013                      | [SKIPPED]                                             | KGS1,KGS2,KGS8_KGS9,K100
 // ============================================================
 
 // ============================================================

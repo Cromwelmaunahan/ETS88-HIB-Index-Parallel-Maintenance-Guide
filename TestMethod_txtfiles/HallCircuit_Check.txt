@@ -1,4 +1,4 @@
-,Test Function Name:     TF_HallCircuit_Check
+Test Function Name:     TF_HallCircuit_Check
 CPP File Name:          HallCircuit_Check.cpp
 
 // Resource Status and Condition

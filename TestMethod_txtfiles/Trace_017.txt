@@ -15,10 +15,10 @@ CPP File Name:          Trace_017.cpp
 // ============================================================
 //  Test Number                                  | OldHIB-B                                               | NewHIB-B
 //  -------------------------------------------------|--------------------------------------------------------|--------------------------------------------------------
-//  TestLimits(&testResultRelayCloseOpen)#1          | APU12 CH8: Force Current=10mA, Measure Voltage | APU12 CH8: Force Current=10mA, Measure Voltage
-//  TestLimits(&ResisVal)                            | APU12 CH8: Force Current=10mA, Measure Voltage | APU12 CH8: Force Current=10mA, Measure Voltage
-//  TestLimits(&testResultRelayCloseOpen)#2          | APU12 CH8: Force Current=10mA, Measure Voltage | APU12 CH8: Force Current=10mA, Measure Voltage
-//  TestLimits(&testResultRelayCloseOpen)#3          | APU12 CH8: Force Current=10mA, Measure Voltage | APU12 CH8: Force Current=10mA, Measure Voltage
+//  21700          | APU12 CH8: Force Current=10mA, Measure Voltage | APU12 CH8: Force Current=10mA, Measure Voltage
+//  21701          | APU12 CH8: Force Current=10mA, Measure Voltage | APU12 CH8: Force Current=10mA, Measure Voltage
+//  21702          | APU12 CH8: Force Current=10mA, Measure Voltage | APU12 CH8: Force Current=10mA, Measure Voltage
+//  21703          | APU12 CH8: Force Current=10mA, Measure Voltage | APU12 CH8: Force Current=10mA, Measure Voltage
 // ============================================================
 
 // Relay Status
@@ -35,10 +35,10 @@ CPP File Name:          Trace_017.cpp
 // ============================================================
 //  Test Number                               | OldHIB-B           | NewHIB-B
 //  ----------------------------------------------|--------------------|-------------------------
-//  TestLimits(&testResultRelayCloseOpen)#1       | K114,K110,K118     | KB14,KB10,KDB1,KDB2,KDB3
-//  TestLimits(&ResisVal)                         | K114,K110,K118     | KB14,KB10,KDB1,KDB2,KDB3
-//  TestLimits(&testResultRelayCloseOpen)#2       | K110,K118          | KB10,KDB1,KDB2,KDB3
-//  TestLimits(&testResultRelayCloseOpen)#3       | K114,K110          | KB14,KB10
+//  21700       | K114,K110,K118     | KB14,KB10,KDB1,KDB2,KDB3
+//  21701       | K114,K110,K118     | KB14,KB10,KDB1,KDB2,KDB3
+//  21702       | K110,K118          | KB10,KDB1,KDB2,KDB3
+//  21703       | K114,K110          | KB14,KB10
 // ============================================================
 
 
