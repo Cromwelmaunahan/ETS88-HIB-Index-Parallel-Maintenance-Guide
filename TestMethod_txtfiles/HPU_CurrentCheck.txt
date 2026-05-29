@@ -1,0 +1,88 @@
+Test Function Name:     TF_HPU_CurrentCheck
+CPP File Name:          HPU_CurrentCheck.cpp
+
+// Resource Status and Condition
+// ============================================================
+//  SECTORA TABLE
+// ============================================================
+//  Test Number                              | OldHIB-A                                                                     | NewHIB-A
+//  ------------------------------------|------------------------------------------------------|------------------------------------------------------
+//  19501 | HPU94:(TestCurrent=2.000A)  Force Current AWG = 0mA, hpuadcmode, hpuawgselect "I_pulse"; HPU99: Force Voltage = 0V, hpuadcmode, MCU_CH0=Group(HPU_1)+Group(HPU_2); MEAS mcurun+ blockread + namearray("Ipulse_I1" ... + blockread + namearray("Ipulse_I2" ..., average("Ipulse_I2", ... | same as OldHIB-A
+//  19502 | HPU94:(TestCurrent=5A)      Force Current AWG = 0mA, hpuadcmode, hpuawgselect "I_pulse"; HPU99: Force Voltage = 0V, hpuadcmode, MCU_CH0=Group(HPU_1)+Group(HPU_2); MEAS mcurun+ blockread + namearray("Ipulse_I1" ... + blockread + namearray("Ipulse_I2" ..., average("Ipulse_I2", ... | same as OldHIB-A
+//  19503 | HPU99:(TestCurrent=20A)     Force Current AWG = 0mA, hpuadcmode, hpuawgselect "I_pulse"; HPU94: Force Voltage = 0V, hpuadcmode, MCU_CH0=Group(HPU_2)+Group(HPU_1); MEAS mcurun+ blockread + namearray("Ipulse_I1" ... + blockread + namearray("Ipulse_I2" ..., average("Ipulse_I2", ... | same as OldHIB-A
+//  19504 | HPU94:(TestCurrent=-20A)    Force Current AWG = 0mA, hpuadcmode, hpuawgselect "I_pulse"; HPU99: Force Voltage = 0V, hpuadcmode, MCU_CH0=Group(HPU_1)+Group(HPU_2); MEAS mcurun+ blockread + namearray("Ipulse_I1" ... + blockread + namearray("Ipulse_I2" ..., average("Ipulse_I2", ... | same as OldHIB-A
+//  19505 | HPU94:(TestCurrent=0.18A)   Force Current AWG = 0mA, hpuadcmode, hpuawgselect "I_pulse"; HPU99: Force Voltage = 0V, hpuadcmode, MCU_CH0=Group(HPU_1)+Group(HPU_2); MEAS mcurun+ blockread + namearray("Ipulse_I1" ... + blockread + namearray("Ipulse_I2" ..., average("Ipulse_I2", ... | same as OldHIB-A
+// ============================================================
+
+// ============================================================
+//  SECTORB TABLE
+// ============================================================
+//  Test Number                              | OldHIB-B                                                                     | NewHIB-B
+//  ------------------------------------|------------------------------------------------------|------------------------------------------------------
+//  Selected Test Label is not tested on SectorB           | N/A      | N/A
+// ============================================================
+
+// Relay Status
+// ============================================================
+//  SECTORA TABLE
+// ============================================================
+//  Test Number                              | OldHIB-A                                                                     | NewHIB-A
+//  ------------------------------------|------------------------------------------------------|------------------------------------------------------
+//  19501 | K055,K058,K053 | KH155,KH255,KL155,KL255,KL158_KL258,KH158,KH258,K153
+//  19502 | K055,K058,K053 | KH155,KH255,KL155,KL255,KL158_KL258,KH158,KH258,K153
+//  19503 | K055,K058,K053 | KH155,KH255,KL155,KL255,KL158_KL258,KH158,KH258,K153
+//  19504 | K055,K058,K053 | KH155,KH255,KL155,KL255,KL158_KL258,KH158,KH258,K153
+//  19505 | K055,K058,K053 | KH155,KH255,KL155,KL255,KL158_KL258,KH158,KH258,K153
+// ============================================================
+
+// ============================================================
+//  SECTORB TABLE
+// ============================================================
+//  Test Number                              | OldHIB-B                                                                     | NewHIB-B
+//  ------------------------------------|------------------------------------------------------|------------------------------------------------------
+//  Selected Test Label is not tested on SectorB           | N/A      | N/A
+// ============================================================
+
+
+Addtional Notes:
+1. Pin Map Consideration
+        RS1_SP112_1 = SPU112 channel 2
+        RS1_SP112_2 = SPU112 channel 3
+        RS1_APU12_1 = APU12 channel 0
+        RS1_APU12_2 = APU12 channel 1
+        RS1_APU12_3 = APU12 channel 2
+        RS1_APU12_4 = APU12 channel 3
+        RS1_APU12_5 = APU12 channel 4
+        RS1_APU12_6 = APU12 channel 5
+        RS1_APU12_7 = APU12 channel 6
+        RS1_APU12_8 = APU12 channel 7
+        RS1_APU12_9 = APU12 channel 8
+        RS1_APU12_10 = APU12 channel 9
+        RS1_APU12_11 = APU12 channel 10
+        RS1_APU12_12 = APU12 channel 11
+        RS1_HPU_1 = HPU 94
+        RS1_HPU_2 = HPU 99
+        RS1_HPU_3 = HPU 89
+        RS1_HPU_4 = HPU 92
+
+        RS2_SP112_1 = SPU112 channel 2
+        RS2_SP112_2 = SPU112 channel 3
+        RS2_APU12_1 = APU12 channel 0
+        RS2_APU12_2 = APU12 channel 1
+        RS2_APU12_3 = APU12 channel 2
+        RS2_APU12_4 = APU12 channel 3
+        RS2_APU12_5 = APU12 channel 4
+        RS2_APU12_6 = APU12 channel 5
+        RS2_APU12_7 = APU12 channel 6
+        RS2_APU12_8 = APU12 channel 7
+        RS2_APU12_9 = APU12 channel 8
+        RS2_APU12_10 = APU12 channel 9
+        RS2_APU12_11 = APU12 channel 10
+        RS2_APU12_12 = APU12 channel 11
+
+2. Test Condition Variables Consideration
+        All the values are extracted from respective Datasheet Editor of MST.
+        Sector A with NewHIB-A = DibChecker_A_newHIBA.pds
+        Sector A with OldHIB-A = DibChecker_A_oldHIBA.pds
+        Sector B with NewHIB-B = DibChecker_B_newHIBB.pds
+        Sector B with OldHIB-B = DibChecker_B_oldHIBB.pds

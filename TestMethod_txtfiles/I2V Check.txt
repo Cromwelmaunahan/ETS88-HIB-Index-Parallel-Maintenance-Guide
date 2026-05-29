@@ -1,0 +1,180 @@
+Test Function Name:     TF_I2V_Test
+CPP File Name:          I2V_Test.cpp
+
+// Resource Status and Condition
+// ============================================================
+//  SECTORA TABLE
+// ============================================================
+//  Test Number              | OldHIB-A                                                                                                                                                          | NewHIB-A
+//  -----------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------
+//  16000  | SPU112 CH2: Force Voltage AWG =10V, AWG=I2V_input_200mv, Measure Voltage; APU12 CH0: Force Current = 0mA, MCU: CH1=CLK/500, CH7=GATE/500, run msPGASeq | same as OldHIB-A
+//  16001  | SPU112 CH2: Force Voltage AWG =10V, AWG=I2V_input_200mv, Measure Voltage; APU12 CH0: Force Current = 0mA, MCU: CH1=CLK/500, CH7=GATE/500, run msPGASeq | same as OldHIB-A
+//  16002  | APU12 CH1: Force Current = 1mA, Measure Voltage    | same as OldHIB-A
+//  16003  | APU12 CH1: Force Current = -1mA, Measure Voltage     | same as OldHIB-A
+//  16004  | SPU112 CH2: Force Voltage =2V, Measure Current           | same as OldHIB-A
+//  16005  | SPU112 CH2: Force Current Sweep ForceI_20uA[0..5]={0.02,0.01,0.006,0.002,-0.004,-0.01} mA; APU12 CH0: Force Current = 0mA, Measure Voltage | same as OldHIB-A
+//  16006  | SPU112 CH2: Force Current Sweep ForceI_20uA[0..5]={0.02,0.01,0.006,0.002,-0.004,-0.01} mA; APU12 CH0: Force Current = 0mA, Measure Voltage            | same as OldHIB-A
+//  16007  | SPU112 CH2: Force Current Sweep ForceI1_200nA_mA[0..5]={0.002,0.001,0.0006,0.0002,-0.0004,-0.001} mA; APU12 CH0: Force Current = 0mA, Measure Voltage | same as OldHIB-A
+//  16008  | SPU112 CH2: Force Current Sweep ForceI1_200nA_mA[0..5]={0.002,0.001,0.0006,0.0002,-0.0004,-0.001} mA; APU12 CH0: Force Current = 0mA, Measure Voltage                                                                                                                                       | same as OldHIB-A
+//  16009  | SPU112 CH2: Force Current Sweep ForceI2_200nA_mA[0..7]={-0.0002,-0.0001,-6e-5,-2e-5,4e-5,6e-5,1e-4,2e-4} mA; APU12 CH0: Force Current = 0mA, Measure Voltage | same as OldHIB-A
+//  16010  | SPU112 CH2: Force Current Sweep ForceI2_200nA_mA[0..7]={-0.0002,-0.0001,-6e-5,-2e-5,4e-5,6e-5,1e-4,2e-4} mA; APU12 CH0: Force Current = 0mA, Measure Voltage                                                                                                                                      | same as OldHIB-A
+//  16011  | SPU112 CH2: Force Current Sweep ForceI_20nA_mA[0..5]={2e-5,1e-5,6e-6,2e-6,-4e-6,-1e-5} mA; APU12 CH0: Force Current = 0mA, Measure Voltage | same as OldHIB-A
+//  16012  | SPU112 CH2: Force Current Sweep ForceI_20nA_mA[0..5]={2e-5,1e-5,6e-6,2e-6,-4e-6,-1e-5} mA; APU12 CH0: Force Current = 0mA, Measure Voltage                                                                                                                                        | same as OldHIB-A
+//  16015  | SPU112 CH3: Force Voltage AWG =10V, AWG=I2V_input_200mv, Measure Voltage; APU12 CH6: Force Current = 0mA, MCU: CH1=CLK/500, CH7=GATE/500, run msPGASeq | same as OldHIB-A
+//  16016  | SPU112 CH3: Force Voltage AWG =10V, AWG=I2V_input_200mv, Measure Voltage; APU12 CH6: Force Current = 0mA, MCU: CH1=CLK/500, CH7=GATE/500, run msPGASeq | same as OldHIB-A
+//  16017  | APU12 CH7: Force Current = 1mA, Measure Voltage                  | same as OldHIB-A
+//  16018  | APU12 CH7: Force Current = -1mA, Measure Voltage                        | same as OldHIB-A
+//  16019  | SPU112 CH3: Force Voltage =2V, Measure Current                              | same as OldHIB-A
+//  16020  | SPU112 CH3: Force Current Sweep ForceI2_20uA[0..5]={0.02,0.01,0.006,0.002,-0.004,-0.01} mA; APU12 CH6: Force Current = 0mA, Measure Voltage | same as OldHIB-A
+//  16021  | SPU112 CH3: Force Current Sweep ForceI2_20uA[0..5]={0.02,0.01,0.006,0.002,-0.004,-0.01} mA; APU12 CH6: Force Current = 0mA, Measure Voltage  | same as OldHIB-A                                                                                                                                      | same as OldHIB-A
+//  16022  | SPU112 CH3: Force Current Sweep ForceI3_200nA[0..5]={0.002,0.001,0.0006,0.0002,-0.0004,-0.001} mA; APU12 CH6: Force Current = 0mA, Measure Voltage | same as OldHIB-A
+//  16023  | SPU112 CH3: Force Current Sweep ForceI3_200nA[0..5]={0.002,0.001,0.0006,0.0002,-0.0004,-0.001} mA; APU12 CH6: Force Current = 0mA, Measure Voltage     | same as OldHIB-A                                                                                                                                   | same as OldHIB-A
+//  16024  | SPU112 CH3: Force Current Sweep ForceI4_200nA[0..5]={2e-4,1e-4,6e-5,2e-5,-4e-5,-1e-4} mA; APU12 CH6: Force Current = 0mA, Measure Voltage | same as OldHIB-A
+//  16025  | SPU112 CH3: Force Current Sweep ForceI4_200nA[0..5]={2e-4,1e-4,6e-5,2e-5,-4e-5,-1e-4} mA; APU12 CH6: Force Current = 0mA, Measure Voltage       | same as OldHIB-A                                                                                                                                 | same as OldHIB-A
+//  16026  | SPU112 CH3: Force Current Sweep ForceI2_20nA[0..5]={1.5e-5,1e-5,6e-6,2e-6,-4e-6,-1e-5} mA; APU12 CH6: Force Current = 0mA, Measure Voltage | same as OldHIB-A
+//  16027  | SPU112 CH3: Force Current Sweep ForceI2_20nA[0..5]={1.5e-5,1e-5,6e-6,2e-6,-4e-6,-1e-5} mA; APU12 CH6: Force Current = 0mA, Measure Voltage     | same as OldHIB-A                                                                                                                                   | same as OldHIB-A
+// ============================================================
+
+// ============================================================
+//  SECTORB TABLE
+// ============================================================
+//  Test Number              | OldHIB-B                                                                                                                                                          | NewHIB-B
+//  -----------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------
+//  26400  | SPU112 CH2: Force Voltage AWG =10V, AWG=I2V_input_200mv, Measure Voltage; APU12 CH0: Force Current = 0mA, MCU: CH1=CLK/500, CH7=GATE/500, run msPGASeq | same as OldHIB-B
+//  26401  | SPU112 CH2: Force Voltage AWG =10V, AWG=I2V_input_200mv, Measure Voltage; APU12 CH0: Force Current = 0mA, MCU: CH1=CLK/500, CH7=GATE/500, run msPGASeq | same as OldHIB-B
+//  26402  | APU12 CH1: Force Current = 1mA, Measure Voltage        | same as OldHIB-B
+//  26403  | APU12 CH1: Force Current = -1mA, Measure Voltage              | same as OldHIB-B
+//  26404  | SPU112 CH2: Force Voltage =2V, Measure Current         | same as OldHIB-B
+//  26405  | SPU112 CH2: Force Current Sweep ForceI_20uA[0..5]={0.02,0.01,0.006,0.002,-0.004,-0.01} mA; APU12 CH0: Force Current = 0mA, Measure Voltage | same as OldHIB-B
+//  26406  | SPU112 CH2: Force Current Sweep ForceI_20uA[0..5]={0.02,0.01,0.006,0.002,-0.004,-0.01} mA; APU12 CH0: Force Current = 0mA, Measure Voltage                              | same as OldHIB-B
+//  26407  | SPU112 CH2: Force Current Sweep ForceI1_200nA_mA[0..5]={0.002,0.001,0.0006,0.0002,-0.0004,-0.001} mA; APU12 CH0: Force Current = 0mA, Measure Voltage | same as OldHIB-B
+//  26408  | SPU112 CH2: Force Current Sweep ForceI1_200nA_mA[0..5]={0.002,0.001,0.0006,0.0002,-0.0004,-0.001} mA; APU12 CH0: Force Current = 0mA, Measure Voltage                     | same as OldHIB-B
+//  26409  | SPU112 CH2: Force Current Sweep ForceI2_200nA_mA[0..7]={-2e-4,-1e-4,-6e-5,-2e-5,4e-5,6e-5,1e-4,2e-4} mA; APU12 CH0: Force Current = 0mA, Measure Voltage | same as OldHIB-B
+//  26410  | SPU112 CH2: Force Current Sweep ForceI2_200nA_mA[0..7]={-2e-4,-1e-4,-6e-5,-2e-5,4e-5,6e-5,1e-4,2e-4} mA; APU12 CH0: Force Current = 0mA, Measure Voltage                       | same as OldHIB-B
+//  26411  | SPU112 CH2: Force Current Sweep ForceI_20nA_mA[0..5]={2e-5,1e-5,6e-6,2e-6,-4e-6,-1e-5} mA; APU12 CH0: Force Current = 0mA, Measure Voltage | same as OldHIB-B
+//  26412  | SPU112 CH2: Force Current Sweep ForceI_20nA_mA[0..5]={2e-5,1e-5,6e-6,2e-6,-4e-6,-1e-5} mA; APU12 CH0: Force Current = 0mA, Measure Voltage                        | same as OldHIB-B
+//  26415  | SPU112 CH3: Force Voltage AWG =10V, AWG=I2V_input_200mv, Measure Voltage; APU12 CH6: Force Current = 0mA, MCU: CH1=CLK/500, CH7=GATE/500, run msPGASeq | same as OldHIB-B
+//  26416  | SPU112 CH3: Force Voltage AWG =10V, AWG=I2V_input_200mv, Measure Voltage; APU12 CH6: Force Current = 0mA, MCU: CH1=CLK/500, CH7=GATE/500, run msPGASeq | same as OldHIB-B
+//  26417  | APU12 CH7: Force Current = 1mA, Measure Voltage                  | same as OldHIB-B
+//  26418  | APU12 CH7: Force Current = -1mA, Measure Voltage                          | same as OldHIB-B
+//  26419  | SPU112 CH3: Force Voltage =2V, Measure Current                                | same as OldHIB-B
+//  26420  | SPU112 CH3: Force Current Sweep ForceI2_20uA[0..5]={0.02,0.01,0.006,0.002,-0.004,-0.01} mA; APU12 CH6: Force Current = 0mA, Measure Voltage | same as OldHIB-B
+//  26421  | SPU112 CH3: Force Current Sweep ForceI2_20uA[0..5]={0.02,0.01,0.006,0.002,-0.004,-0.01} mA; APU12 CH6: Force Current = 0mA, Measure Voltage                       | same as OldHIB-B
+//  26422  | SPU112 CH3: Force Current Sweep ForceI3_200nA[0..5]={0.002,0.001,0.0006,0.0002,-0.0004,-0.001} mA; APU12 CH6: Force Current = 0mA, Measure Voltage | same as OldHIB-B
+//  26423  | SPU112 CH3: Force Current Sweep ForceI3_200nA[0..5]={0.002,0.001,0.0006,0.0002,-0.0004,-0.001} mA; APU12 CH6: Force Current = 0mA, Measure Voltage                   | same as OldHIB-B
+//  26424  | SPU112 CH3: Force Current Sweep ForceI4_200nA[0..5]={2e-4,1e-4,6e-5,2e-5,-4e-5,-1e-4} mA; APU12 CH6: Force Current = 0mA, Measure Voltage | same as OldHIB-B
+//  26425  | SPU112 CH3: Force Current Sweep ForceI4_200nA[0..5]={2e-4,1e-4,6e-5,2e-5,-4e-5,-1e-4} mA; APU12 CH6: Force Current = 0mA, Measure Voltage                | same as OldHIB-B
+//  26426  | SPU112 CH3: Force Current Sweep ForceI2_20nA[0..5]={1.5e-5,1e-5,6e-6,2e-6,-4e-6,-1e-5} mA; APU12 CH6: Force Current = 0mA, Measure Voltage | same as OldHIB-B
+//  26427  | SPU112 CH3: Force Current Sweep ForceI2_20nA[0..5]={1.5e-5,1e-5,6e-6,2e-6,-4e-6,-1e-5} mA; APU12 CH6: Force Current = 0mA, Measure Voltage                    | same as OldHIB-B
+// ============================================================
+
+// Relay Status
+// ============================================================
+//  SECTORA TABLE
+// ============================================================
+//  Test Number              | OldHIB-A                                                                                              | NewHIB-A
+//  -----------------------------|-------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------
+//  16000  | K100,K043,K28_K29,K33_K133,PGA_A1_Pat_AB                                                              | KA43,KA28_A29,KA33_KB33,PGA_A1_Pat_AB
+//  16001  | K100,K043,K28_K29,K33_K133,PGA_A0_Pat_AB,PGA_A1_Pat_AB                                                | KA43,KA28_A29,KA33_KB33,PGA_A0_Pat_AB,PGA_A1_Pat_AB
+//  16002  | K100,K004,K021                                                                                        | KA4,KA21
+//  16003  | K100,K004,K021                                                                                        | KA4,KA21
+//  16004  | K100,K040,K041,K042,K044,K021,K32_K132                                                                | KA40,KA41,KA42,KA44,KA21,KA32_KB32
+//  16005  | K100,K040,K041,K042,K044,K021,K30_K31_K130_K131,K33_K133,PGA_A0_AB,PGA_A1_AB                          | KA40,KA41,KA42,KA44,KA21,KA30_KA31_KB30_KB31,KA33_KB33,PGA_A0_AB,PGA_A1_AB
+//  16006  | K100,K040,K041,K042,K044,K021,K30_K31_K130_K131,K33_K133,PGA_A0_AB,PGA_A1_AB                          | KA40,KA41,KA42,KA44,KA21,KA30_KA31_KB30_KB31,KA33_KB33,PGA_A0_AB,PGA_A1_AB
+//  16007  | K100,K040,K041,K042,K044,K021,K30_K31_K130_K131,K33_K133,PGA_A0_AB,PGA_A1_AB,K26_K126,K27_K127        | KA40,KA41,KA42,KA44,KA21,KA30_KA31_KB30_KB31,KA33_KB33,PGA_A0_AB,PGA_A1_AB,KA26_KB26,KA27_KB27
+//  16008  | K100,K040,K041,K042,K044,K021,K30_K31_K130_K131,K33_K133,PGA_A0_AB,PGA_A1_AB,K26_K126,K27_K127        | KA40,KA41,KA42,KA44,KA21,KA30_KA31_KB30_KB31,KA33_KB33,PGA_A0_AB,PGA_A1_AB,KA26_KB26,KA27_KB27
+//  16009  | K100,K040,K041,K042,K044,K021,K30_K31_K130_K131,K33_K133,PGA_A0_AB,PGA_A1_AB,K26_K126,K25_K125        | KA40,KA41,KA42,KA44,KA21,KA30_KA31_KB30_KB31,KA33_KB33,PGA_A0_AB,PGA_A1_AB,KA26_KB26,KA25_KB25
+//  16010  | K100,K040,K041,K042,K044,K021,K30_K31_K130_K131,K33_K133,PGA_A0_AB,PGA_A1_AB,K26_K126,K25_K125        | KA40,KA41,KA42,KA44,KA21,KA30_KA31_KB30_KB31,KA33_KB33,PGA_A0_AB,PGA_A1_AB,KA26_KB26,KA25_KB25
+//  16011  | K100,K040,K041,K042,K044,K021,K30_K31_K130_K131,K33_K133,PGA_A0_AB,K26_K126,K27_K127                  | KA40,KA41,KA42,KA44,KA21,KA30_KA31_KB30_KB31,KA33_KB33,PGA_A0_AB,KA26_KB26,KA27_KB27
+//  16012  | K100,K040,K041,K042,K044,K021,K30_K31_K130_K131,K33_K133,PGA_A0_AB,K26_K126,K27_K127                  | KA40,KA41,KA42,KA44,KA21,KA30_KA31_KB30_KB31,KA33_KB33,PGA_A0_AB,KA26_KB26,KA27_KB27
+//  16015  | K100,K143,K128_K129,K33_K133,PGA_A1_Pat_AB                                                            | KB43,KB28_KB29,KA33_KB33,PGA_A1_Pat_AB
+//  16016  | K100,K143,K128_K129,K33_K133,PGA_A0_Pat_AB,PGA_A1_Pat_AB                                              | KB43,KB28_KB29,KA33_KB33,PGA_A0_Pat_AB,PGA_A1_Pat_AB
+//  16017  | K100,K104,K121                                                                                        | KB4,KB21
+//  16018  | K100,K104,K121                                                                                        | KB4,KB21
+//  16019  | K100,K140,K141,K142,K144,K121,K32_K132                                                                | KB40,KB41,KB42,KB44,KB21,KA32_KB32
+//  16020  | K100,K140,K141,K142,K144,K121,K30_K31_K130_K131,K33_K133,PGA_A0_AB,PGA_A1_AB                          | KB40,KB41,KB42,KB44,KB21,KA30_KA31_KB30_KB31,KA33_KB33,PGA_A0_AB,PGA_A1_AB
+//  16021  | K100,K140,K141,K142,K144,K121,K30_K31_K130_K131,K33_K133,PGA_A0_AB,PGA_A1_AB                          | KB40,KB41,KB42,KB44,KB21,KA30_KA31_KB30_KB31,KA33_KB33,PGA_A0_AB,PGA_A1_AB
+//  16022  | K100,K140,K141,K142,K144,K121,K30_K31_K130_K131,K33_K133,PGA_A0_AB,PGA_A1_AB,K26_K126,K27_K127        | KB40,KB41,KB42,KB44,KB21,KA30_KA31_KB30_KB31,KA33_KB33,PGA_A0_AB,PGA_A1_AB,KA26_KB26,KA27_KB27
+//  16023  | K100,K140,K141,K142,K144,K121,K30_K31_K130_K131,K33_K133,PGA_A0_AB,PGA_A1_AB,K26_K126,K27_K127        | KB40,KB41,KB42,KB44,KB21,KA30_KA31_KB30_KB31,KA33_KB33,PGA_A0_AB,PGA_A1_AB,KA26_KB26,KA27_KB27
+//  16024  | K100,K140,K141,K142,K144,K121,K30_K31_K130_K131,K33_K133,PGA_A0_AB,PGA_A1_AB,K26_K126,K25_K125        | KB40,KB41,KB42,KB44,KB21,KA30_KA31_KB30_KB31,KA33_KB33,PGA_A0_AB,PGA_A1_AB,KA26_KB26,KA25_KB25
+//  16025  | K100,K140,K141,K142,K144,K121,K30_K31_K130_K131,K33_K133,PGA_A0_AB,PGA_A1_AB,K26_K126,K25_K125        | KB40,KB41,KB42,KB44,KB21,KA30_KA31_KB30_KB31,KA33_KB33,PGA_A0_AB,PGA_A1_AB,KA26_KB26,KA25_KB25
+//  16026  | K100,K140,K141,K142,K144,K121,K30_K31_K130_K131,K33_K133,PGA_A0_AB,K26_K126,K27_K127                  | KB40,KB41,KB42,KB44,KB21,KA30_KA31_KB30_KB31,KA33_KB33,PGA_A0_AB,KA26_KB26,KA27_KB27
+//  16027  | K100,K140,K141,K142,K144,K121,K30_K31_K130_K131,K33_K133,PGA_A0_AB,K26_K126,K27_K127                  | KB40,KB41,KB42,KB44,KB21,KA30_KA31_KB30_KB31,KA33_KB33,PGA_A0_AB,KA26_KB26,KA27_KB27
+// ============================================================
+
+// ============================================================
+//  SECTORB TABLE
+// ============================================================
+//  Test Number              | OldHIB-B                                                                                              | NewHIB-B
+//  -----------------------------|-------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------
+//  26400  | K045,K28_K29,K33_K133,K35_K135,PGA_A1_AB                                                              | KA45,KA43,KA28_A29,KA33_KB33,PGA_A1_AB
+//  26401  | K045,K28_K29,K33_K133,K35_K135,PGA_A0_AB,PGA_A1_AB                                                    | KA45,KA43,KA28_A29,KA33_KB33,PGA_A0_AB,PGA_A1_AB
+//  26402  | K004,K021                                                                                             | KA4,KA21
+//  26403  | K004,K021                                                                                             | KA4,KA21
+//  26404  | K040,K041,K042,K044,K021,K32_K132                                                                     | KA40,KA41,KA42,KA44,KA21,KA32_KB32
+//  26405  | K040,K041,K042,K044,K021,K30_K31_K130_K131,K33_K133,K35_K135,PGA_A0_AB,PGA_A1_AB                      | KA40,KA41,KA42,KA44,KA21,KA30_KA31_KB30_KB31,KA33_KB33,PGA_A0_AB,PGA_A1_AB
+//  26406  | K040,K041,K042,K044,K021,K30_K31_K130_K131,K33_K133,K35_K135,PGA_A0_AB,PGA_A1_AB                      | KA40,KA41,KA42,KA44,KA21,KA30_KA31_KB30_KB31,KA33_KB33,PGA_A0_AB,PGA_A1_AB
+//  26407  | K040,K041,K042,K044,K021,K30_K31_K130_K131,K33_K133,K35_K135,PGA_A0_AB,PGA_A1_AB,K26_K126,K27_K127    | KA40,KA41,KA42,KA44,KA21,KA30_KA31_KB30_KB31,KA33_KB33,PGA_A0_AB,PGA_A1_AB,KA26_KB26,KA27_KB27
+//  26408  | K040,K041,K042,K044,K021,K30_K31_K130_K131,K33_K133,K35_K135,PGA_A0_AB,PGA_A1_AB,K26_K126,K27_K127    | KA40,KA41,KA42,KA44,KA21,KA30_KA31_KB30_KB31,KA33_KB33,PGA_A0_AB,PGA_A1_AB,KA26_KB26,KA27_KB27
+//  26409  | K040,K041,K042,K044,K021,K30_K31_K130_K131,K33_K133,K35_K135,PGA_A0_AB,PGA_A1_AB,K26_K126,K25_K125    | KA40,KA41,KA42,KA44,KA21,KA30_KA31_KB30_KB31,KA33_KB33,PGA_A0_AB,PGA_A1_AB,KA26_KB26,KA25_KB25
+//  26410  | K040,K041,K042,K044,K021,K30_K31_K130_K131,K33_K133,K35_K135,PGA_A0_AB,PGA_A1_AB,K26_K126,K25_K125    | KA40,KA41,KA42,KA44,KA21,KA30_KA31_KB30_KB31,KA33_KB33,PGA_A0_AB,PGA_A1_AB,KA26_KB26,KA25_KB25
+//  26411  | K040,K041,K042,K044,K021,K30_K31_K130_K131,K33_K133,K35_K135,PGA_A0_AB,K26_K126,K27_K127              | KA40,KA41,KA42,KA44,KA21,KA30_KA31_KB30_KB31,KA33_KB33,PGA_A0_AB,KA26_KB26,KA27_KB27
+//  26412  | K040,K041,K042,K044,K021,K30_K31_K130_K131,K33_K133,K35_K135,PGA_A0_AB,K26_K126,K27_K127              | KA40,KA41,KA42,KA44,KA21,KA30_KA31_KB30_KB31,KA33_KB33,PGA_A0_AB,KA26_KB26,KA27_KB27
+//  26415  | K145,K128_K129,K33_K133,K35_K135,PGA_A1_AB                                                            | KB45,KB43,KB28_KB29,KA33_KB33,PGA_A1_AB
+//  26416  | K145,K128_K129,K33_K133,K35_K135,PGA_A0_AB,PGA_A1_AB                                                  | KB45,KB43,KB28_KB29,KA33_KB33,PGA_A0_AB,PGA_A1_AB
+//  26417  | K104,K121                                                                                             | KB4,KB21
+//  26418  | K104,K121                                                                                             | KB4,KB21
+//  26419  | K140,K141,K142,K144,K121,K32_K132                                                                     | KB40,KB41,KB42,KB44,KB21,KA32_KB32
+//  26420  | K140,K141,K142,K144,K121,K30_K31_K130_K131,K33_K133,K35_K135,PGA_A0_AB,PGA_A1_AB                      | KB40,KB41,KB42,KB44,KB21,KA30_KA31_KB30_KB31,KA33_KB33,PGA_A0_AB,PGA_A1_AB
+//  26421  | K140,K141,K142,K144,K121,K30_K31_K130_K131,K33_K133,K35_K135,PGA_A0_AB,PGA_A1_AB                      | KB40,KB41,KB42,KB44,KB21,KA30_KA31_KB30_KB31,KA33_KB33,PGA_A0_AB,PGA_A1_AB
+//  26422  | K140,K141,K142,K144,K121,K30_K31_K130_K131,K33_K133,K35_K135,PGA_A0_AB,PGA_A1_AB,K26_K126,K27_K127    | KB40,KB41,KB42,KB44,KB21,KA30_KA31_KB30_KB31,KA33_KB33,PGA_A0_AB,PGA_A1_AB,KA26_KB26,KA27_KB27
+//  26423  | K140,K141,K142,K144,K121,K30_K31_K130_K131,K33_K133,K35_K135,PGA_A0_AB,PGA_A1_AB,K26_K126,K27_K127    | KB40,KB41,KB42,KB44,KB21,KA30_KA31_KB30_KB31,KA33_KB33,PGA_A0_AB,PGA_A1_AB,KA26_KB26,KA27_KB27
+//  26424  | K140,K141,K142,K144,K121,K30_K31_K130_K131,K33_K133,K35_K135,PGA_A0_AB,PGA_A1_AB,K26_K126,K25_K125    | KB40,KB41,KB42,KB44,KB21,KA30_KA31_KB30_KB31,KA33_KB33,PGA_A0_AB,PGA_A1_AB,KA26_KB26,KA25_KB25
+//  26425  | K140,K141,K142,K144,K121,K30_K31_K130_K131,K33_K133,K35_K135,PGA_A0_AB,PGA_A1_AB,K26_K126,K25_K125    | KB40,KB41,KB42,KB44,KB21,KA30_KA31_KB30_KB31,KA33_KB33,PGA_A0_AB,PGA_A1_AB,KA26_KB26,KA25_KB25
+//  26426  | K140,K141,K142,K144,K121,K30_K31_K130_K131,K33_K133,K35_K135,PGA_A0_AB,K26_K126,K27_K127              | KB40,KB41,KB42,KB44,KB21,KA30_KA31_KB30_KB31,KA33_KB33,PGA_A0_AB,KA26_KB26,KA27_KB27
+//  26427  | K140,K141,K142,K144,K121,K30_K31_K130_K131,K33_K133,K35_K135,PGA_A0_AB,K26_K126,K27_K127              | KB40,KB41,KB42,KB44,KB21,KA30_KA31_KB30_KB31,KA33_KB33,PGA_A0_AB,KA26_KB26,KA27_KB27
+// ============================================================
+
+
+Addtional Notes:
+1. Pin Map Consideration
+        RS1_SP112_1 = SPU112 channel 2
+        RS1_SP112_2 = SPU112 channel 3
+        RS1_APU12_1 = APU12 channel 0
+        RS1_APU12_2 = APU12 channel 1
+        RS1_APU12_3 = APU12 channel 2
+        RS1_APU12_4 = APU12 channel 3
+        RS1_APU12_5 = APU12 channel 4
+        RS1_APU12_6 = APU12 channel 5
+        RS1_APU12_7 = APU12 channel 6
+        RS1_APU12_8 = APU12 channel 7
+        RS1_APU12_9 = APU12 channel 8
+        RS1_APU12_10 = APU12 channel 9
+        RS1_APU12_11 = APU12 channel 10
+        RS1_APU12_12 = APU12 channel 11
+        RS1_HPU_1 = HPU 94
+        RS1_HPU_2 = HPU 99
+        RS1_HPU_3 = HPU 89
+        RS1_HPU_4 = HPU 92
+
+        RS2_SP112_1 = SPU112 channel 2
+        RS2_SP112_2 = SPU112 channel 3
+        RS2_APU12_1 = APU12 channel 0
+        RS2_APU12_2 = APU12 channel 1
+        RS2_APU12_3 = APU12 channel 2
+        RS2_APU12_4 = APU12 channel 3
+        RS2_APU12_5 = APU12 channel 4
+        RS2_APU12_6 = APU12 channel 5
+        RS2_APU12_7 = APU12 channel 6
+        RS2_APU12_8 = APU12 channel 7
+        RS2_APU12_9 = APU12 channel 8
+        RS2_APU12_10 = APU12 channel 9
+        RS2_APU12_11 = APU12 channel 10
+        RS2_APU12_12 = APU12 channel 11
+
+2. Test Condition Variables Consideration
+        All the values are extracted from respective Datasheet Editor of MST.
+        Sector A with NewHIB-A = DibChecker_A_newHIBA.pds
+        Sector A with OldHIB-A = DibChecker_A_oldHIBA.pds
+        Sector B with NewHIB-B = DibChecker_B_newHIBB.pds
+        Sector B with OldHIB-B = DibChecker_B_oldHIBB.pds

@@ -1,0 +1,104 @@
+,Test Function Name:     TF_HallCircuit_Check
+CPP File Name:          HallCircuit_Check.cpp
+
+// Resource Status and Condition
+// ============================================================
+//  SECTORA TABLE
+// ============================================================
+//  Test Number                              | OldHIB-A                                                                     | NewHIB-A
+//  ------------------------------------|------------------------------------------------------|------------------------------------------------------
+//  17000       | APU12 CH7: Force Voltage = 2V; SPU112 CH3: Force Current = 0mA, Measure Voltage ADCMODE; HPU94: Force Voltage AWG = 0V, hpuawgselect "Hall_100A30V"; MCU_CH1=HPU94, MCU_CH2=SPU112 CH3; MEAS mcurun("calHall") + blockread(SPU112 CH3,-1) + namearray("CalCurrent",...); average("CalCurrent",...) | same as OldHIB-A 
+//  17001       | APU12 CH7: Force Voltage = 2V; SPU112 CH3: Force Current = 0mA, Measure Voltage ADCMODE; HPU94: Force Voltage AWG = 0V, hpuawgselect "Hall_100A30V"; MCU_CH1=HPU94, MCU_CH2=SPU112 CH3; MEAS mcurun("calHall") + blockread(SPU112 CH3,-1) + namearray("HallDiffAmp",...); average("HallDiffAmp",...) | same as OldHIB-A 
+//  17002       | APU12 CH7: Force Voltage = 2V; SPU112 CH3: Force Current = 0mA, Measure Voltage ADCMODE; HPU94: Force Voltage AWG = 0V, hpuawgselect "Hall_100A30V"; MCU_CH1=HPU94, MCU_CH2=SPU112 CH3; MEAS mcurun("calHall") + blockread(SPU112 CH3,-1) + namearray("HallDiffAmp",...); average("HallDiffAmp",...) | same as OldHIB-A 
+//  17003       | APU12 CH7: Force Voltage = 2V; SPU112 CH3: Force Current = 0mA, Measure Voltage ADCMODE; HPU94: Force Voltage AWG = 0V, hpuawgselect "Hall_100A30V"; MCU_CH1=HPU94, MCU_CH2=SPU112 CH3; MEAS mcurun("calHall") + blockread(SPU112 CH3,-1) + namearray("HallDiffAmp",...); average("HallDiffAmp",...) | same as OldHIB-A 
+//  17004       | APU12 CH7: Force Voltage = 2V; SPU112 CH3: Force Current = 0mA, Measure Voltage ADCMODE; HPU94: Force Voltage AWG = 0V, hpuawgselect "Hall_100A30V"; MCU_CH1=HPU94, MCU_CH2=SPU112 CH3; MEAS mcurun("calHall") + blockread(SPU112 CH3,-1) + namearray("HallDiffAmp",...); average("HallDiffAmp",...) | same as OldHIB-A 
+//  17005       | APU12 CH4: Force Voltage = 15V, APU12 CH5: Force Voltage = -1V; APU12 CH7: Force Voltage = 0.1V; APU12 CH1: Force Current = 0mA, Measure Voltage ADCMODE; HPU94: Force Voltage AWG = 0V, hpuawgselect "Hall10A30V_pos"; MCU_CH1=HPU94, MCU_CH2=APU12_1; MEAS mcurun("HSS_GATE_N") + namearray("CalCurrent_N",...) + peak("CalCurrent_N",1,1000,PEAK_HI)*0.001 | same as OldHIB-A 
+//  17006       | APU12 CH4: Force Voltage = 15V, APU12 CH5: Force Voltage = -1V; APU12 CH7: Force Voltage = 0.1V; APU12 CH1: Force Current = 0mA, Measure Voltage ADCMODE; HPU94: Force Voltage AWG = 0V, hpuawgselect "Hall10A30V_pos"; MCU_CH1=HPU94, MCU_CH2=APU12_1; MEAS mcurun("HSS_GATE_N") + namearray("CalCurrent_N",...) + peak("CalCurrent_N",1,1000,PEAK_HI)*0.001; MEAS average("CalCurrent_N",800,900)*0.001 | same as OldHIB-A 
+//  17007       | APU12 CH4: Force Voltage = 15V, APU12 CH5: Force Voltage = -1V; APU12 CH7: Force Voltage = 0.1V; APU12 CH1: Force Current = 0mA, Measure Voltage ADCMODE; HPU94: Force Voltage AWG = 0V, hpuawgselect "Hall10A30V_pos"; MCU_CH1=HPU94, MCU_CH2=APU12_1; MEAS mcurun("HSS_GATE_N") + namearray("CalCurrent_N",...) + peak("CalCurrent_N",1,1000,PEAK_HI)*0.001; MEAS namearray("GateDriver_N", NAMEARRAY_APU12ADC, APU12_2) + average("GateDriver_N",200,300) | same as OldHIB-A 
+//  17008       | APU12 CH4: Force Voltage = 15V, APU12 CH5: Force Voltage = -1V; APU12 CH7: Force Voltage = 0.1V; APU12 CH1: Force Current = 0mA, Measure Voltage ADCMODE; HPU94: Force Voltage AWG = 0V, hpuawgselect "Hall10A30V_pos"; MCU_CH1=HPU94, MCU_CH2=APU12_1; MEAS mcurun("HSS_GATE_N") + namearray("CalCurrent_N",...) + peak("CalCurrent_N",1,1000,PEAK_HI)*0.001; MEAS average("GateDriver_N",800,900) | same as OldHIB-A 
+//  17009       | APU12 CH4: Force Voltage = 15V; APU12 CH5: Force Voltage = -1V; APU12 CH7: Force Voltage = -1V; APU12 CH1: Force Current = 0mA, Measure Voltage ADCMODE; HPU94: Force Voltage AWG = 0V, hpuawgselect "Hall10A30V_neg"; MEAS mcurun("HSS_GATE_P") + namearray("CalCurrent_P",...) + peak("CalCurrent_P",1,1000,PEAK_LO)*0.001 | same as OldHIB-A 
+//  17010       | APU12 CH4: Force Voltage = 15V; APU12 CH5: Force Voltage = -1V; APU12 CH7: Force Voltage = -1V; APU12 CH1: Force Current = 0mA, Measure Voltage ADCMODE; HPU94: Force Voltage AWG = 0V, hpuawgselect "Hall10A30V_neg"; MEAS mcurun("HSS_GATE_P") + namearray("CalCurrent_P",...) + peak("CalCurrent_P",1,1000,PEAK_LO)*0.001 MEAS average("CalCurrent_P",800,900)*0.001 | same as OldHIB-A 
+//  17011       | APU12 CH4: Force Voltage = 15V; APU12 CH5: Force Voltage = -1V; APU12 CH7: Force Voltage = -1V; APU12 CH1: Force Current = 0mA, Measure Voltage ADCMODE; HPU94: Force Voltage AWG = 0V, hpuawgselect "Hall10A30V_neg"; MEAS mcurun("HSS_GATE_P") + namearray("CalCurrent_P",...) + peak("CalCurrent_P",1,1000,PEAK_LO)*0.001 MEAS namearray("GateDriver_P", NAMEARRAY_APU12ADC, APU12_2) + average("GateDriver_P",200,300) | same as OldHIB-A 
+//  17012       | APU12 CH4: Force Voltage = 15V; APU12 CH5: Force Voltage = -1V; APU12 CH7: Force Voltage = -1V; APU12 CH1: Force Current = 0mA, Measure Voltage ADCMODE; HPU94: Force Voltage AWG = 0V, hpuawgselect "Hall10A30V_neg"; MEAS mcurun("HSS_GATE_P") + namearray("CalCurrent_P",...) + peak("CalCurrent_P",1,1000,PEAK_LO)*0.001 MEAS average("GateDriver_P",800,900) | same as OldHIB-A 
+// ============================================================
+
+// ============================================================
+//  SECTORB TABLE
+// ============================================================
+//  Test Number                              | OldHIB-B                                                                     | NewHIB-B
+//  ------------------------------------|------------------------------------------------------|------------------------------------------------------
+//  Selected Test Label is not tested on SectorB           | N/A      | N/A
+// ============================================================
+
+// Relay Status
+// ============================================================
+//  SECTORA TABLE
+// ============================================================
+//  Test Number                              | OldHIB-A                                                                     | NewHIB-A
+//  ------------------------------------|------------------------------------------------------|------------------------------------------------------
+//  17000       | K100,K058,K062,KS3,K072,K144,K063                                                                                  | KL158_KL258,KH158,KH258,KIX62_KIY62,KHS3,K72,KB44,KIX63_KIY63,KGS1,KGS2,KGS8_KGS9
+//  17001       | K100,K058,K062,KS3,K072,K144,K063                                                                                  | KL158_KL258,KH158,KH258,KIX62_KIY62,KHS3,K72,KB44,KIX63_KIY63,KGS1,KGS2,KGS8_KGS9
+//  17002        | K100,K058,K062,KS3,K072,K144,K063,K074                                                                          | KL158_KL258,KH158,KH258,KIX62_KIY62,KHS3,K72,KB44,KIX63_KIY63,K74,KGS1,KGS2,KGS8_KGS9
+//  17003       | K100,K058,K062,KS3,K072,K144,K063,K070                                                                          | KL158_KL258,KH158,KH258,KIX62_KIY62,KHS3,K72,KB44,KIX63_KIY63,K70,KGS1,KGS2,KGS8_KGS9
+//  17004         | K100,K058,K062,KS3,K072,K144,K063,K071                                                                          | KL158_KL258,KH158,KH258,KIX62_KIY62,KHS3,K72,KB44,KIX63_KIY63,K71,KGS1,KGS2,KGS8_KGS9
+//  17005         | K100,K058,K062,KS3,<setupInductor_uH(10)>,K040,K041,K004,K064,K065,K066,K067,K68_K69,K070,K071,K063               | KL158_KL258,KH158,KH258,KIX62_KIY62,KHS3,<setupInductor_uH(10)>,KA40,KA41,KA4,K64,K65,K66,K67,KA68_KA69,K70,K71,KIX63_KIY63,KGS1,KGS2,KGS8_KGS9,GDR_PWR,KBC7,KBC8
+//  17006         | K100,K058,K062,KS3,<setupInductor_uH(10)>,K040,K041,K004,K064,K065,K066,K067,K68_K69,K070,K071,K063               | KL158_KL258,KH158,KH258,KIX62_KIY62,KHS3,<setupInductor_uH(10)>,KA40,KA41,KA4,K64,K65,K66,K67,KA68_KA69,K70,K71,KIX63_KIY63,KGS1,KGS2,KGS8_KGS9,GDR_PWR,KBC7,KBC8
+//  17007       | K100,K058,K062,KS3,<setupInductor_uH(10)>,K040,K041,K004,K064,K065,K066,K067,K68_K69,K070,K071,K063               | KL158_KL258,KH158,KH258,KIX62_KIY62,KHS3,<setupInductor_uH(10)>,KA40,KA41,KA4,K64,K65,K66,K67,KA68_KA69,K70,K71,KIX63_KIY63,KGS1,KGS2,KGS8_KGS9,GDR_PWR,KBC7,KBC8
+//  17008       | K100,K058,K062,KS3,<setupInductor_uH(10)>,K040,K041,K004,K064,K065,K066,K067,K68_K69,K070,K071,K063               | KL158_KL258,KH158,KH258,KIX62_KIY62,KHS3,<setupInductor_uH(10)>,KA40,KA41,KA4,K64,K65,K66,K67,KA68_KA69,K70,K71,KIX63_KIY63,KGS1,KGS2,KGS8_KGS9,GDR_PWR,KBC7,KBC8
+//  17009          | K100,K058,K062,KS3,<setupInductor_uH(10)>,K040,K041,K004,K064,K065,K066,K067,K68_K69,K070,K071,K063,K073,K061   | KL158_KL258,KH158,KH258,KIX62_KIY62,KHS3,<setupInductor_uH(10)>,KA40,KA41,KA4,K64,K65,K66,K67,KA68_KA69,K70,K71,KIX63_KIY63,KGS1,KGS2,KGS8_KGS9,GDR_PWR,KBC7,KBC8,K73_KGS3,KIX61,KIY61_KIZ61
+//  17010        | K100,K058,K062,KS3,<setupInductor_uH(10)>,K040,K041,K004,K064,K065,K066,K067,K68_K69,K070,K071,K063,K073,K061   | KL158_KL258,KH158,KH258,KIX62_KIY62,KHS3,<setupInductor_uH(10)>,KA40,KA41,KA4,K64,K65,K66,K67,KA68_KA69,K70,K71,KIX63_KIY63,KGS1,KGS2,KGS8_KGS9,GDR_PWR,KBC7,KBC8,K73_KGS3,KIX61,KIY61_KIZ61
+//  17011       | K100,K058,K062,KS3,<setupInductor_uH(10)>,K040,K041,K004,K064,K065,K066,K067,K68_K69,K070,K071,K063,K073,K061   | KL158_KL258,KH158,KH258,KIX62_KIY62,KHS3,<setupInductor_uH(10)>,KA40,KA41,KA4,K64,K65,K66,K67,KA68_KA69,K70,K71,KIX63_KIY63,KGS1,KGS2,KGS8_KGS9,GDR_PWR,KBC7,KBC8,K73_KGS3,KIX61,KIY61_KIZ61
+//  17012       | K100,K058,K062,KS3,<setupInductor_uH(10)>,K040,K041,K004,K064,K065,K066,K067,K68_K69,K070,K071,K063,K073,K061   | KL158_KL258,KH158,KH258,KIX62_KIY62,KHS3,<setupInductor_uH(10)>,KA40,KA41,KA4,K64,K65,K66,K67,KA68_KA69,K70,K71,KIX63_KIY63,KGS1,KGS2,KGS8_KGS9,GDR_PWR,KBC7,KBC8,K73_KGS3,KIX61,KIY61_KIZ61
+// ============================================================
+
+// ============================================================
+//  SECTORB TABLE
+// ============================================================
+//  Test Number                              | OldHIB-B                                                                     | NewHIB-B
+//  ------------------------------------|------------------------------------------------------|------------------------------------------------------
+//  Selected Test Label is not tested on SectorB           | N/A      | N/A
+// ============================================================
+
+
+Addtional Notes:
+1. Pin Map Consideration
+        RS1_SP112_1 = SPU112 channel 2
+        RS1_SPU112 CH3 = SPU112 channel 3
+        RS1_APU12_1 = APU12 channel 0
+        RS1_APU12_2 = APU12 channel 1
+        RS1_APU12_3 = APU12 channel 2
+        RS1_APU12_4 = APU12 channel 3
+        RS1_APU12_5 = APU12 channel 4
+        RS1_APU12_6 = APU12 channel 5
+        RS1_APU12_7 = APU12 channel 6
+        RS1_APU12_8 = APU12 channel 7
+        RS1_APU12_9 = APU12 channel 8
+        RS1_APU12_10 = APU12 channel 9
+        RS1_APU12_11 = APU12 channel 10
+        RS1_APU12_12 = APU12 channel 11
+        RS1_HPU_1 = HPU 94
+        RS1_HPU_2 = HPU 99
+        RS1_HPU_3 = HPU 89
+        RS1_HPU_4 = HPU 92
+
+        RS2_SP112_1 = SPU112 channel 2
+        RS2_SPU112 CH3 = SPU112 channel 3
+        RS2_APU12_1 = APU12 channel 0
+        RS2_APU12_2 = APU12 channel 1
+        RS2_APU12_3 = APU12 channel 2
+        RS2_APU12_4 = APU12 channel 3
+        RS2_APU12_5 = APU12 channel 4
+        RS2_APU12_6 = APU12 channel 5
+        RS2_APU12_7 = APU12 channel 6
+        RS2_APU12_8 = APU12 channel 7
+        RS2_APU12_9 = APU12 channel 8
+        RS2_APU12_10 = APU12 channel 9
+        RS2_APU12_11 = APU12 channel 10
+        RS2_APU12_12 = APU12 channel 11
+
+2. Test Condition Variables Consideration
+        All the values are extracted from respective Datasheet Editor of MST.
+        Sector A with NewHIB-A = DibChecker_A_newHIBA.pds
+        Sector A with OldHIB-A = DibChecker_A_oldHIBA.pds
+        Sector B with NewHIB-B = DibChecker_B_newHIBB.pds
+        Sector B with OldHIB-B = DibChecker_B_oldHIBB.pds

@@ -1,0 +1,106 @@
+Test Function Name:     TF_Gate_Module_Test
+CPP File Name:          Gate_Module_Test.cpp
+
+// Resource Status and Condition
+// ============================================================
+//  SECTORA TABLE
+// ============================================================
+//  Test Number                                  | OldHIB-A                                                                 | NewHIB-A
+//  -------------------------------------------------|--------------------------------------------------------------------------|--------------------------------------------------------------------------
+//  TestLimits(&GateH)#1                             | APU12 CH1: Force Current=0mA, Measure Voltage | APU12 CH1: Force Current=0mA, Measure Voltage
+//  TestLimits(&GateL)#1                             | APU12 CH1: Force Current AWG=0mA, Measure Voltage ADC, APU12 CH7: Force Voltage AWG = 1V     | APU12 CH1: Force Current AWG=0mA, Measure Voltage ADC, APU12 CH7: Force Voltage AWG = 1V
+//  TestLimits(&ResisCalc)#1                         | APU12 CH4: Force Voltage=15V, APU12 CH5: Force Voltage = 0V, APU12 CH1: Force Voltage = 20V, Measure Current | APU12 CH4: Force Voltage=15V, APU12 CH5: Force Voltage = 0V, APU12 CH1: Force Voltage = 20V, Measure Current
+//  TestLimits(&ResisCalc)#2                         | APU12 CH4: Force Voltage=15V, APU12 CH5: Force Voltage = 0V, APU12 CH1: Force Voltage = 20V, Measure Current | APU12 CH4: Force Voltage=15V, APU12 CH5: Force Voltage = 0V, APU12 CH1: Force Voltage = 20V, Measure Current
+//  TestLimits(&ResisCalc)#3                         | APU12 CH4: Force Voltage=15V, APU12 CH5: Force Voltage = 0V, APU12 CH1: Force Voltage = 20V, Measure Current | APU12 CH4: Force Voltage=15V, APU12 CH5: Force Voltage = 0V, APU12 CH1: Force Voltage = 20V, Measure Current
+//  TestLimits(&ResisCalc)#4                         | APU12 CH4: Force Voltage=15V, APU12 CH5: Force Voltage = 0V, APU12 CH1: Force Voltage = 20V, Measure Current | APU12 CH4: Force Voltage=15V, APU12 CH5: Force Voltage = 0V, APU12 CH1: Force Voltage = 20V, Measure Current
+//  TestLimits(&CapH)                                | APU12 CH4: Force Current AWG = 0mA, Measure Voltage ADC        | APU12 CH4: Force Current AWG = 0mA, Measure Voltage ADC
+//  TestLimits(&CapL)                                |APU12 CH5: Force Current AWG = 0mA, Measure Voltage ADC        |APU12 CH5: Force Current AWG = 0mA, Measure Voltage ADC
+//  TestLimits(&GateH)#2                             | [SKIPPED]                                                                | APU12 CH4: Force Current = 0mA, Measure Voltage
+//  TestLimits(&GateL)#2                             | [SKIPPED]                                                                | APU12 CH5: Force Current = 0mA, Measure Voltage
+//  TestLimits(&GateH)#3                             | [SKIPPED]                                                                | APU12 CH4: Force Current = 0mA, Measure Voltage
+//  TestLimits(&GateL)#3                             | [SKIPPED]                                                                | APU12 CH5: Force Current = 0mA, Measure Voltage
+//  TestLimits(&GateH)#4                             | [SKIPPED]                                                                | APU12 CH4: Force Current = 0mA, Measure Voltage
+//  TestLimits(&GateL)#4                             | [SKIPPED]                                                                | APU12 CH5: Force Current = 0mA, Measure Voltage
+// ============================================================
+
+// ============================================================
+//  SECTORB TABLE
+// ============================================================
+//  Test Number                                  | OldHIB-B                                                                 | NewHIB-B
+//  -------------------------------------------------|--------------------------------------------------------------------------|--------------------------------------------------------------------------
+//  Selected Test Label is not tested on SectorB           | N/A      | N/A
+// ============================================================
+
+// Relay Status
+// ============================================================
+//  SECTORA TABLE
+// ============================================================
+//  Test Number                                  | OldHIB-A                                              | NewHIB-A
+//  -------------------------------------------------|-------------------------------------------------------|-------------------------------------------------------
+//  TestLimits(&GateH)#1                             | K100,K064,K065,K066,K067,K68_K69,K040,K041,K004,KS3 | K100,KBC7,KBC8,KHS3,KGS1,KGS2,KGS8_KGS9,K64,K65,K66,K67,KA68_KA69,KA40,KA41,KA4,GDR_PWR
+//  TestLimits(&GateL)#1                             | K100,K064,K065,K066,K067,K68_K69,K040,K041,K004,KS3 | K100,KBC7,KBC8,KHS3,KGS1,KGS2,KGS8_KGS9,K64,K65,K66,K67,KA68_KA69,KA40,KA41,KA4,GDR_PWR
+//  TestLimits(&ResisCalc)#1                         | K100,K065,K066,K067,K68_K69,K040,K041,K004,KS3      | K100,KBC7,KBC8,KHS3,KGS1,KGS2,KGS8_KGS9,K65,K66,K67,KA68_KA69,KA40,KA41,KA4,GDR_PWR
+//  TestLimits(&ResisCalc)#2                         | K100,K064,K066,K067,K68_K69,K040,K041,K004,KS3      | K100,KBC7,KBC8,KHS3,KGS1,KGS2,KGS8_KGS9,K64,K66,K67,KA68_KA69,KA40,KA41,KA4,GDR_PWR
+//  TestLimits(&ResisCalc)#3                         | K100,K064,K065,K067,K68_K69,K040,K041,K004,KS3      | K100,KBC7,KBC8,KHS3,KGS1,KGS2,KGS8_KGS9,K64,K65,K67,KA68_KA69,KA40,KA41,KA4,GDR_PWR
+//  TestLimits(&ResisCalc)#4                         | K100,K064,K065,K066,K68_K69,K040,K041,K004,KS3      | K100,KBC7,KBC8,KHS3,KGS1,KGS2,KGS8_KGS9,K64,K65,K66,KA68_KA69,KA40,KA41,KA4,GDR_PWR
+//  TestLimits(&CapH)                                | K100                                                  | K100
+//  TestLimits(&CapL)                                | K100                                                  | K100
+//  TestLimits(&GateH)#2                             | [SKIPPED]                                             | KGS1,KGS2,KGS8_KGS9,K100,GDR_PWR
+//  TestLimits(&GateL)#2                             | [SKIPPED]                                             | KGS1,KGS2,KGS8_KGS9,K100
+//  TestLimits(&GateH)#3                             | [SKIPPED]                                             | KGS4_KGS6,KGS5_KGS7,KGS1,KGS2,KGS8_KGS9,K100
+//  TestLimits(&GateL)#3                             | [SKIPPED]                                             | KGS1,KGS2,KGS8_KGS9,K100,KGS5_KGS7
+//  TestLimits(&GateH)#4                             | [SKIPPED]                                             | KGS1,KGS2,KGS8_KGS9,K100,KGS4_KGS6
+//  TestLimits(&GateL)#4                             | [SKIPPED]                                             | KGS1,KGS2,KGS8_KGS9,K100
+// ============================================================
+
+// ============================================================
+//  SECTORB TABLE
+// ============================================================
+//  Test Number                                  | OldHIB-B  | NewHIB-B
+//  -------------------------------------------------|-----------|----------
+//  Selected Test Label is not tested on SectorB           | N/A      | N/A
+// ============================================================
+
+
+Addtional Notes:
+1. Pin Map Consideration
+        RS1_SP112_1 = SPU112 channel 2
+        RS1_SP112_2 = SPU112 channel 3
+        RS1_APU12_1 = APU12 channel 0
+        RS1_APU12_2 = APU12 channel 1
+        RS1_APU12_3 = APU12 channel 2
+        RS1_APU12_4 = APU12 channel 3
+        RS1_APU12_5 = APU12 channel 4
+        RS1_APU12_6 = APU12 channel 5
+        RS1_APU12_7 = APU12 channel 6
+        RS1_APU12_8 = APU12 channel 7
+        RS1_APU12_9 = APU12 channel 8
+        RS1_APU12_10 = APU12 channel 9
+        RS1_APU12_11 = APU12 channel 10
+        RS1_APU12_12 = APU12 channel 11
+        RS1_HPU_1 = HPU 94
+        RS1_HPU_2 = HPU 99
+        RS1_HPU_3 = HPU 89
+        RS1_HPU_4 = HPU 92
+
+        RS2_SP112_1 = SPU112 channel 2
+        RS2_SP112_2 = SPU112 channel 3
+        RS2_APU12_1 = APU12 channel 0
+        RS2_APU12_2 = APU12 channel 1
+        RS2_APU12_3 = APU12 channel 2
+        RS2_APU12_4 = APU12 channel 3
+        RS2_APU12_5 = APU12 channel 4
+        RS2_APU12_6 = APU12 channel 5
+        RS2_APU12_7 = APU12 channel 6
+        RS2_APU12_8 = APU12 channel 7
+        RS2_APU12_9 = APU12 channel 8
+        RS2_APU12_10 = APU12 channel 9
+        RS2_APU12_11 = APU12 channel 10
+        RS2_APU12_12 = APU12 channel 11
+
+2. Test Condition Variables Consideration
+        All the values are extracted from respective Datasheet Editor of MST.
+        Sector A with NewHIB-A = DibChecker_A_newHIBA.pds
+        Sector A with OldHIB-A = DibChecker_A_oldHIBA.pds
+        Sector B with NewHIB-B = DibChecker_B_newHIBB.pds
+        Sector B with OldHIB-B = DibChecker_B_oldHIBB.pds

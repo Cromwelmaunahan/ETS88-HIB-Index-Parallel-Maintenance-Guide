@@ -1,0 +1,90 @@
+Test Function Name:     TF_Trace_007
+CPP File Name:          Trace_007.cpp
+
+// Resource Status and Condition
+// ============================================================
+//  SECTORA TABLE
+// ============================================================
+//  Test Number                                  | OldHIB-A                                               | NewHIB-A
+//  -------------------------------------------------|--------------------------------------------------------|--------------------------------------------------------
+//  10700          | APU12 CH8: FI=3mA, Mesure Voltage | APU12 CH8: FI=3mA, Mesure Voltage
+//  10701          | APU12 CH8: FI=3mA, Mesure Voltage | APU12 CH8: FI=3mA, Mesure Voltage
+//  10702          | APU12 CH8: FI=3mA, Mesure Voltage | APU12 CH8: FI=3mA, Mesure Voltage
+//  10703          | APU12 CH8: FI=3mA, Mesure Voltage | APU12 CH8: FI=3mA, Mesure Voltage
+// ============================================================
+
+// ============================================================
+//  SECTORB TABLE
+// ============================================================
+//  Test Number                                  | OldHIB-B                                               | NewHIB-B
+//  -------------------------------------------------|--------------------------------------------------------|--------------------------------------------------------
+//  20700                        | APU12 CH6: FI=10mA, Mesure Voltage | APU12 CH6: FI=10mA, Mesure Voltage
+//  20701                        | APU12 CH6: FI=10mA, Mesure Voltage | APU12 CH6: FI=10mA, Mesure Voltage
+//  20702                        | APU12 CH6: FI=10mA, Mesure Voltage | APU12 CH6: FI=10mA, Mesure Voltage
+// ============================================================
+
+// Relay Status
+// ============================================================
+//  SECTORA TABLE
+// ============================================================
+//  Test Number                       | OldHIB-A                                        | NewHIB-A
+//  --------------------------------------|-------------------------------------------------|-------------------------------------------------
+//  10700 | K012,Lim_DF_4A_HPU1,K055,K52_K56,K013,K100    | KA12,KDA4,KH355,K352_356,KA16,KA5
+//  10701 | K012,Lim_DF_4A_HPU1,K055,K52_K56,K013,K100    | KA12,KDA4,KH355,K352_356,KA16,KA5
+//  10702 | Lim_DF_4A_HPU1,K055,K52_K56,K013,K100         | KDA4,KH355,K352_356,KA16,KA5
+//  10703 | K012,K055,K52_K56,K013,K100                   | KA12,KH355,K352_356,KA16,KA5
+// ============================================================
+
+// ============================================================
+//  SECTORB TABLE
+// ============================================================
+//  Test Number                       | OldHIB-B       | NewHIB-B
+//  --------------------------------------|----------------|-----------------------------------------------------------
+//  20700               | K117,K103,K101 | KSB1,KSB4,KSB5,KL255,KL158_KL258,KL358_KL458,KL455,KB3,KB1
+//  20701               | K103,K101      | KB3,KB1
+//  20702               | K117,K101      | KSB1,KSB4,KSB5,KL255,KL158_KL258,KL358_KL458,KL455,KB1
+// ============================================================
+
+
+Addtional Notes:
+1. Pin Map Consideration
+        RS1_SP112_1 = SPU112 channel 2
+        RS1_SP112_2 = SPU112 channel 3
+        RS1_APU12_1 = APU12 channel 0
+        RS1_APU12_2 = APU12 channel 1
+        RS1_APU12_3 = APU12 channel 2
+        RS1_APU12_4 = APU12 channel 3
+        RS1_APU12_5 = APU12 channel 4
+        RS1_APU12_6 = APU12 channel 5
+        RS1_APU12_7 = APU12 channel 6
+        RS1_APU12_8 = APU12 channel 7
+        RS1_APU12_9 = APU12 channel 8
+        RS1_APU12_10 = APU12 channel 9
+        RS1_APU12_11 = APU12 channel 10
+        RS1_APU12_12 = APU12 channel 11
+        RS1_HPU_1 = HPU 94
+        RS1_HPU_2 = HPU 99
+        RS1_HPU_3 = HPU 89
+        RS1_HPU_4 = HPU 92
+
+        RS2_SP112_1 = SPU112 channel 2
+        RS2_SP112_2 = SPU112 channel 3
+        RS2_APU12_1 = APU12 channel 0
+        RS2_APU12_2 = APU12 channel 1
+        RS2_APU12_3 = APU12 channel 2
+        RS2_APU12_4 = APU12 channel 3
+        RS2_APU12_5 = APU12 channel 4
+        RS2_APU12_6 = APU12 channel 5
+        RS2_APU12_7 = APU12 channel 6
+        RS2_APU12_8 = APU12 channel 7
+        RS2_APU12_9 = APU12 channel 8
+        RS2_APU12_10 = APU12 channel 9
+        RS2_APU12_11 = APU12 channel 10
+        RS2_APU12_12 = APU12 channel 11
+
+2. Test Condition Variables Consideration
+        All the values are extracted from respective Datasheet Editor of MST.
+        Sector A with NewHIB-A = DibChecker_A_newHIBA.pds
+        Sector A with OldHIB-A = DibChecker_A_oldHIBA.pds
+        Sector B with NewHIB-B = DibChecker_B_newHIBB.pds
+        Sector B with OldHIB-B = DibChecker_B_oldHIBB.pds

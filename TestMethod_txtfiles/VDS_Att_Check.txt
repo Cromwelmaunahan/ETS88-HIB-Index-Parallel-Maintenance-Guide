@@ -1,0 +1,98 @@
+Test Function Name:     TF_VDS_Att_Test
+CPP File Name:          VDS_Att_Test.cpp
+
+// Resource Status and Condition
+// ============================================================
+//  SECTORA TABLE
+// ============================================================
+//  Test Number                                  | OldHIB-A                                               | NewHIB-A
+//  -------------------------------------------------|--------------------------------------------------------|--------------------------------------------------------
+//1500.0 | HPU 99: Force Voltage = 32V, APU12 CH2: Force Voltage = 5V, APU12 CH0: Force Voltage = 5V, SPU112 CH2: Force Current = 0mA, Measure Voltage | HPU 99: Force Voltage = 32V, APU12 CH2: Force Voltage = 5V, APU12 CH0: Force Voltage = 5V, SPU112 CH2: Force Current = 0mA, Measure Voltage
+//1501.0 | HPU 99 active, SPU112 CH2: Force Current = 0mA, HPU 99: Measure Voltage, SPU112 CH2: Measure Voltage | HPU 99 active, SPU112 CH2: Force Current = 0mA, HPU 99: Measure Voltage, SPU112 CH2: Measure Voltage
+//1502.0 | PGA-B Calculate Gain_1 (at 32V and 85V) | PGA-B Calculate Gain_1 (at 32V and 85V)
+//1503.0 | PGA-B Derived Offset_1 = output_1 - Gain_1*input_1 | PGA-B Derived Offset_1 = output_1 - Gain_1*input_1
+//1504.0 | PGA-B Calculate Gain_2 (at 32V and 85V) | PGA-B Calculate Gain_2 (at 32V and 85V)
+//1505.0 | PGA-B Derived Offset_2 = output_1 - Gain_2*input_1 | PGA-B Derived Offset_2 = output_1 - Gain_2*input_1
+//1506.0 | PGA-A Calculate Gain_1 (at 32V and 85V) | PGA-A Calculate Gain_1 (at 32V and 85V)
+//1507.0 | PGA-A Derived Offset_1 = output_2 - Gain_1*input_2 | PGA-A Derived Offset_1 = output_2 - Gain_1*input_2
+//1508.0 | PGA-Addtional Calculate Gain_2 (at 32V and 85V) | PGA-Addtional Calculate Gain_2 (at 32V and 85V)
+//1509.0 | PGA-A Derived Offset_2 = output_2 - Gain_2*input_2 | PGA-A Derived Offset_2 = output_2 - Gain_2*input_2
+// ============================================================
+
+// ============================================================
+//  SECTORB TABLE
+// ============================================================
+//  Test Number                                  | OldHIB-B                                               | NewHIB-B
+//  -------------------------------------------------|--------------------------------------------------------|--------------------------------------------------------
+//  Selected Test Label is not tested on SectorB           | N/A      | N/A
+// ============================================================
+
+// Relay Status
+// ============================================================
+//  SECTORA TABLE
+// ============================================================
+//  Test Number                                  | OldHIB-A                                               | NewHIB-A
+//  -------------------------------------------------|--------------------------------------------------------|--------------------------------------------------------
+//1500.0 | K100 K152_K156,K043,K010,K001 | K252_K256,KB36_KB37,K253,KA43,KA10,KA1
+//1501.0 | K100 K152_K156,K039 | K252_K256,KB36_KB37,K253,K39
+//1502.0 | K100 K152_K156,K039 | K252_K256,KB36_KB37,K253,K39
+//1503.0 | K100 K152_K156,K039 | K252_K256,KB36_KB37,K253,K39
+//1504.0 | K100 K152_K156,K039,K038 | K252_K256,KB36_KB37,K253,K39,K38
+//1505.0 | K100 K152_K156,K039,K038 | K252_K256,KB36_KB37,K253,K39,K38
+//1506.0 | K100,K039,K52_K56,K36_K37,K053 | K39,K152_K156,KA36_KA37,K153
+//1507.0 | K100,K039,K52_K56,K36_K37,K053 | K39,K152_K156,KA36_KA37,K153
+//1508.0 | K100,K039,K038,K52_K56,K36_K37,K053 | K39,K38,K152_K156,KA36_KA37,K153
+//1509.0 | K100,K039,K038,K52_K56,K36_K37,K053 | K39,K38,K152_K156,KA36_KA37,K153
+// ============================================================
+
+// ============================================================
+//  SECTORB TABLE
+// ============================================================
+//  Test Number                                  | OldHIB-B                                               | NewHIB-B
+//  -------------------------------------------------|--------------------------------------------------------|--------------------------------------------------------
+//  Selected Test Label is not tested on SectorB           | N/A      | N/A
+// ============================================================
+
+
+Addtional Notes:
+1. Pin Map Consideration
+        RS1_SP112_1 = SPU112 channel 2
+        RS1_SP112_2 = SPU112 channel 3
+        RS1_APU12_1 = APU12 channel 0
+        RS1_APU12_2 = APU12 channel 1
+        RS1_APU12_3 = APU12 channel 2
+        RS1_APU12_4 = APU12 channel 3
+        RS1_APU12_5 = APU12 channel 4
+        RS1_APU12_6 = APU12 channel 5
+        RS1_APU12_7 = APU12 channel 6
+        RS1_APU12_8 = APU12 channel 7
+        RS1_APU12_9 = APU12 channel 8
+        RS1_APU12_10 = APU12 channel 9
+        RS1_APU12_11 = APU12 channel 10
+        RS1_APU12_12 = APU12 channel 11
+        RS1_HPU_1 = HPU 94
+        RS1_HPU_2 = HPU 99
+        RS1_HPU_3 = HPU 89
+        RS1_HPU_4 = HPU 92
+
+        RS2_SP112_1 = SPU112 channel 2
+        RS2_SP112_2 = SPU112 channel 3
+        RS2_APU12_1 = APU12 channel 0
+        RS2_APU12_2 = APU12 channel 1
+        RS2_APU12_3 = APU12 channel 2
+        RS2_APU12_4 = APU12 channel 3
+        RS2_APU12_5 = APU12 channel 4
+        RS2_APU12_6 = APU12 channel 5
+        RS2_APU12_7 = APU12 channel 6
+        RS2_APU12_8 = APU12 channel 7
+        RS2_APU12_9 = APU12 channel 8
+        RS2_APU12_10 = APU12 channel 9
+        RS2_APU12_11 = APU12 channel 10
+        RS2_APU12_12 = APU12 channel 11
+
+2. Test Condition Variables Consideration
+        All the values are extracted from respective Datasheet Editor of MST.
+        Sector A with NewHIB-A = DibChecker_A_newHIBA.pds
+        Sector A with OldHIB-A = DibChecker_A_oldHIBA.pds
+        Sector B with NewHIB-B = DibChecker_B_newHIBB.pds
+        Sector B with OldHIB-B = DibChecker_B_oldHIBB.pds

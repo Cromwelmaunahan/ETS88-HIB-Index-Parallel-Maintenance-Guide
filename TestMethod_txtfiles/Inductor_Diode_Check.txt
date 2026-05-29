@@ -1,0 +1,105 @@
+,Test Function Name:     TF_Inductor_Diode_Test
+CPP File Name:          Inductor_Diode_Check.cpp
+
+// ============================================================
+//  SECTORA TABLE
+// ============================================================
+//  Test Number                              | OldHIB-A                                                                     | NewHIB-A
+//  ------------------------------------|------------------------------------------------------|------------------------------------------------------
+//  18001    | APU12 CH7: Force Voltage = 4.9V; HPU94: HPU_HI_FIAWG awg=Cap48_FI Force_Cur=0.5mA Numb_Steps=100 (HPU_10V/HPU_2MA); MEAS hpuadcmode(HPU_MV_1X/HPU_MI_1X, count=1), blockread(100), namearray(cap_volt NAMEARRAY_HPU_VADC, cap_curr NAMEARRAY_HPU_IADC) | same as OldHIB-A
+//  18002    | APU12 CH7: Force Voltage = 4.9V; APU12 CH9: Force Current = 1mA; Measure Voltage | same as OldHIB-A
+//  18003    | APU12 CH7: Force Voltage = 4.9V; APU12 CH9: Force Current = -1mA; Measure Voltage | same as OldHIB-A
+//  18004    | APU12 CH7: Force Voltage = 4.9V; APU12 CH9: Force Current = -1mA; Measure Voltage | same as OldHIB-A
+//  18005    | APU12 CH7: Force Voltage = 4.9V; APU12 CH9: Force Current = 1mA; Measure Voltage | same as OldHIB-A
+//  18006    | APU12 CH7: Force Voltage = 4.8V; HPU94: HPU_HI_FIAWG sine awg=Sin<N> freq=4.0kHz inductance=0uH peakI=180mA (HPU_10V/range); MEAS dc blockread+namearray(dc_I/dc_V), ac blockread+namearray(ac_I/ac_V), rms/average -> Actual_L_uH | same as OldHIB-A
+//  18007    | APU12 CH7: Force Voltage = 4.8V; HPU94: HPU_HI_FIAWG sine freq=mdFreq2 kHz inductance=mdInductor2 uH (HPU_10V/range); MEAS as Offset -> Actual_L_uH | same as OldHIB-A
+//  18008    | APU12 CH7: Force Voltage = 4.8V; HPU94: HPU_HI_FIAWG sine freq=mdFreq3 kHz inductance=mdInductor3 uH (HPU_10V/range); MEAS as Offset | same as OldHIB-A
+//  18009    | APU12 CH7: Force Voltage = 4.8V; HPU94: HPU_HI_FIAWG sine freq=mdFreq4 kHz inductance=mdInductor4 uH (HPU_10V/range); MEAS as Offset | same as OldHIB-A
+//  18010    | APU12 CH7: Force Voltage = 4.8V; HPU94: HPU_HI_FIAWG sine freq=mdFreq5 kHz inductance=mdInductor5 uH (HPU_10V/range); MEAS as Offset | same as OldHIB-A
+//  18011    | APU12 CH7: Force Voltage = 4.8V; HPU94: HPU_HI_FIAWG sine freq=mdFreq6 kHz inductance=mdInductor6 uH (HPU_10V/range); MEAS as Offset | same as OldHIB-A
+//  18021    | APU12 CH7: Force Voltage = 4.8V; HPU94: HPU_HI_FIAWG sine freq=mdFreq7 kHz inductance=mdInductor7 uH (HPU_10V/range); MEAS as Offset | same as OldHIB-A
+//  18022    | APU12 CH7: Force Voltage = 4.8V; HPU94: HPU_HI_FIAWG sine freq=mdFreq8 kHz inductance=mdInductor8 uH (HPU_10V/range); MEAS as Offset | same as OldHIB-A
+//  18023    | APU12 CH7: Force Voltage = 4.8V; HPU94: HPU_HI_FIAWG sine freq=mdFreq9 kHz inductance=mdInductor9 uH (HPU_10V/range); MEAS as Offset | same as OldHIB-A
+// ============================================================
+
+// ============================================================
+//  SECTORB TABLE
+// ============================================================
+//  Test Number                              | OldHIB-B                                                                     | NewHIB-B
+//  ------------------------------------|------------------------------------------------------|------------------------------------------------------
+//  Selected Test Label is not tested on SectorB           | N/A      | N/A
+// ============================================================
+
+// Relay Status
+// ============================================================
+//  SECTORA TABLE
+// ============================================================
+//  Test Number                              | OldHIB-A                                                                     | NewHIB-A
+//  ------------------------------------|------------------------------------------------------|------------------------------------------------------
+//  18001    | K055,K060,K062,KS3,K100 | KH155,KH255,KL155,KL255,KL160_KL260_KL360_KL460,KIX62_KIY62,KHS3
+//  18002    | KS3,K100,K111,Lim_DF_2B_HPU2,K058,K153,K061 | KHS3,KB11,KDB2,KL158_KL258,KH158,KH258,K253,KIX61,KIY61_KIZ61
+//  18003    | KS3,K100,K111,Lim_DF_2B_HPU2,K058,K153,K061 | KHS3,KB11,KDB2,KL158_KL258,KH158,KH258,K253,KIX61,KIY61_KIZ61
+//  18004    | KS3,K100,K111,Lim_DF_2B_HPU2,K058,K153 | KHS3,KB11,KDB2,KL158_KL258,KH158,KH258,K253
+//  18005    | KS3,K100,K111,Lim_DF_2B_HPU2,K058,K153 | KHS3,KB11,KDB2,KL158_KL258,KH158,KH258,K253
+//  18006    |L=0uH,     KS3,K100,K055,K060,K062,K053 |L=0uH,     KHS3,KH155,KH255,KL155,KL255,KL160_KL260_KL360_KL460,KIX62_KIY62,K153
+//  18007    |L=10uH,    KS3,K100,K055,K060,K062,K053 |L=10uH,    KHS3,KH155,KH255,KL155,KL255,KL160_KL260_KL360_KL460,KIX62_KIY62,K153
+//  18008    |L=90uH,    KS3,K100,K055,K060,K062,K053 |L=90uH,    KHS3,KH155,KH255,KL155,KL255,KL160_KL260_KL360_KL460,KIX62_KIY62,K153
+//  18009    |L=100uH,   KS3,K100,K055,K060,K062,K053 |L=100uH,   KHS3,KH155,KH255,KL155,KL255,KL160_KL260_KL360_KL460,KIX62_KIY62,K153
+//  18010    |L=900uH,   KS3,K100,K055,K060,K062,K053 |L=900uH,   KHS3,KH155,KH255,KL155,KL255,KL160_KL260_KL360_KL460,KIX62_KIY62,K153
+//  18011    |L=1000uH,  KS3,K100,K055,K060,K062,K053 |L=1000uH,  KHS3,KH155,KH255,KL155,KL255,KL160_KL260_KL360_KL460,KIX62_KIY62,K153
+//  18021    |L=9000uH,  KS3,K100,K055,K060,K062,K053 |L=9000uH,  KHS3,KH155,KH255,KL155,KL255,KL160_KL260_KL360_KL460,KIX62_KIY62,K153
+//  18022    |L=10000uH, KS3,K100,K055,K060,K062,K053 |L=10000uH, KHS3,KH155,KH255,KL155,KL255,KL160_KL260_KL360_KL460,KIX62_KIY62,K153
+//  18023    |L=11000uH, KS3,K100,K055,K060,K062,K053 |L=11000uH, KHS3,KH155,KH255,KL155,KL255,KL160_KL260_KL360_KL460,KIX62_KIY62,K153
+// ============================================================
+
+// ============================================================
+//  SECTORB TABLE
+// ============================================================
+//  Test Number                              | OldHIB-B                                                                     | NewHIB-B
+//  ------------------------------------|------------------------------------------------------|------------------------------------------------------
+//  Selected Test Label is not tested on SectorB           | N/A      | N/A
+// ============================================================
+
+
+Addtional Notes:
+1. Pin Map Consideration
+        RS1_SP112_1 = SPU112 channel 2
+        RS1_SPU112 CH3 = SPU112 channel 3
+        RS1_APU12_1 = APU12 channel 0
+        RS1_APU12_2 = APU12 channel 1
+        RS1_APU12_3 = APU12 channel 2
+        RS1_APU12_4 = APU12 channel 3
+        RS1_APU12_5 = APU12 channel 4
+        RS1_APU12_6 = APU12 channel 5
+        RS1_APU12_7 = APU12 channel 6
+        RS1_APU12_8 = APU12 channel 7
+        RS1_APU12_9 = APU12 channel 8
+        RS1_APU12_10 = APU12 channel 9
+        RS1_APU12_11 = APU12 channel 10
+        RS1_APU12_12 = APU12 channel 11
+        RS1_HPU_1 = HPU 94
+        RS1_HPU_2 = HPU 99
+        RS1_HPU_3 = HPU 89
+        RS1_HPU_4 = HPU 92
+
+        RS2_SP112_1 = SPU112 channel 2
+        RS2_SPU112 CH3 = SPU112 channel 3
+        RS2_APU12_1 = APU12 channel 0
+        RS2_APU12_2 = APU12 channel 1
+        RS2_APU12_3 = APU12 channel 2
+        RS2_APU12_4 = APU12 channel 3
+        RS2_APU12_5 = APU12 channel 4
+        RS2_APU12_6 = APU12 channel 5
+        RS2_APU12_7 = APU12 channel 6
+        RS2_APU12_8 = APU12 channel 7
+        RS2_APU12_9 = APU12 channel 8
+        RS2_APU12_10 = APU12 channel 9
+        RS2_APU12_11 = APU12 channel 10
+        RS2_APU12_12 = APU12 channel 11
+
+2. Test Condition Variables Consideration
+        All the values are extracted from respective Datasheet Editor of MST.
+        Sector A with NewHIB-A = DibChecker_A_newHIBA.pds
+        Sector A with OldHIB-A = DibChecker_A_oldHIBA.pds
+        Sector B with NewHIB-B = DibChecker_B_newHIBB.pds
+        Sector B with OldHIB-B = DibChecker_B_oldHIBB.pds

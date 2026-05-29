@@ -1,0 +1,132 @@
+Test Function Name:     TF_Kelvin_Test
+CPP File Name:          Kelvin_Test.cpp
+
+// Resource Status and Condition
+// ============================================================
+//  SECTORA TABLE
+// ============================================================
+//  Test Number                          | OldHIB-A                                                                     | NewHIB-A
+//  ------------------------------------|------------------------------------------------------|------------------------------------------------------
+//  10081       | APU12 CH0: Force Voltage=2V, Measure Current | APU12 CH0: Force Voltage=2V, Measure Current
+//  10082       | APU12 CH10: Force Voltage=2V, Measure Current | APU12 CH10: Force Voltage=2V, Measure Current
+//  10083       | APU12 CH11: Force Voltage=2V, Measure Current | APU12 CH11: Force Voltage=2V, Measure Current
+//  10084       | APU12 CH1: Force Voltage=2V, Measure Current | APU12 CH1: Force Voltage=2V, Measure Current
+//  10085       | APU12 CH2: Force Voltage=2V, Measure Current | APU12 CH2: Force Voltage=2V, Measure Current
+//  10086       | APU12 CH3: Force Voltage=2V, Measure Current | APU12 CH3: Force Voltage=2V, Measure Current
+//  10087       | APU12 CH8: Force Voltage=2V, Measure Current | APU12 CH8: Force Voltage=2V, Measure Current
+//  10088       | APU12 CH10: Force Voltage=2V, Measure Current | APU12 CH10: Force Voltage=2V, Measure Current
+//  10089       | APU12 CH11: Force Voltage=2V, Measure Current | APU12 CH11: Force Voltage=2V, Measure Current
+//  10090       | APU12 CH10: Force Voltage=2V, Measure Current | APU12 CH10: Force Voltage=2V, Measure Current
+//  10091       | APU12 CH7: Force Voltage=2V, Measure Current | APU12 CH7: Force Voltage=2V, Measure Current
+//  10092       | APU12 CH8: Force Voltage=2V, Measure Current | APU12 CH8: Force Voltage=2V, Measure Current
+//  10093       | APU12 CH9: Force Voltage=2V, Measure Current | APU12 CH9: Force Voltage=2V, Measure Current
+//  10094       | APU12 CH8: Force Voltage=2V, Measure Current | APU12 CH8: Force Voltage=2V, Measure Current
+// ============================================================
+
+// ============================================================
+//  SECTORB TABLE
+// ============================================================
+//  Test Number                          | OldHIB-B                                                                     | NewHIB-B
+//  ------------------------------------|------------------------------------------------------|------------------------------------------------------
+//  20081       | APU12 CH0: Force Voltage=2V, Measure Current | APU12 CH0: Force Voltage=2V, Measure Current
+//  20082       | APU12 CH10: Force Voltage=2V, Measure Current | APU12 CH10: Force Voltage=2V, Measure Current
+//  20083       | APU12 CH11: Force Voltage=2V, Measure Current | APU12 CH11: Force Voltage=2V, Measure Current
+//  20084       | APU12 CH1: Force Voltage=2V, Measure Current | APU12 CH1: Force Voltage=2V, Measure Current
+//  20085       | APU12 CH2: Force Voltage=2V, Measure Current | APU12 CH2: Force Voltage=2V, Measure Current
+//  20086       | APU12 CH3: Force Voltage=2V, Measure Current | APU12 CH3: Force Voltage=2V, Measure Current
+//  20087       | APU12 CH8: Force Voltage=2V, Measure Current | APU12 CH8: Force Voltage=2V, Measure Current
+//  20088       | APU12 CH10: Force Voltage=2V, Measure Current | APU12 CH10: Force Voltage=2V, Measure Current
+//  20089       | APU12 CH11: Force Voltage=2V, Measure Current | APU12 CH11: Force Voltage=2V, Measure Current
+//  20090       | APU12 CH10: Force Voltage=2V, Measure Current | APU12 CH10: Force Voltage=2V, Measure Current
+//  20091       | APU12 CH7: Force Voltage=2V, Measure Current | APU12 CH7: Force Voltage=2V, Measure Current
+//  20092       | APU12 CH8: Force Voltage=2V, Measure Current | APU12 CH8: Force Voltage=2V, Measure Current
+//  20093       | APU12 CH9: Force Voltage=2V, Measure Current | APU12 CH9: Force Voltage=2V, Measure Current
+//  20094       | APU12 CH8: Force Voltage=2V, Measure Current | APU12 CH8: Force Voltage=2V, Measure Current
+// ============================================================
+
+// Relay Status
+// ============================================================
+//  SECTORA TABLE
+// ============================================================
+//  Test Number                          | OldHIB-A                                                                     | NewHIB-A
+//  ------------------------------------|------------------------------------------------------|------------------------------------------------------
+//  10081       | K100,Spu100_openFS,K001,K006                          | KA80_KA81_KB80_KB81,KA1,KA6
+//  10082       | K100,Spu100_openFS,K002,K007                          | KA80_KA81_KB80_KB81,KA2,KA7
+//  10083       | K100,Spu100_openFS,K003,K008                          | KA80_KA81_KB80_KB81,KA3,KA8
+//  10084       | K100,Spu100_openFS,K004,K009                          | KA80_KA81_KB80_KB81,KA4,KA9
+//  10085       | K100,Spu100_openFS,K010,K013                          | KA80_KA81_KB80_KB81,KA10,KA13
+//  10086       | K100,Spu100_openFS,K011,K014                          | KA80_KA81_KB80_KB81,KA11,KA14
+//  10087       | K100,Spu100_openFS,K012,K015                          | KA80_KA81_KB80_KB81,KA12,KA15
+//  10088       | K100,Spu100_openFS,K101,K106                          | KA80_KA81_KB80_KB81,KB1,KB6
+//  10089       | K100,Spu100_openFS,K102,K107                          | KA80_KA81_KB80_KB81,KB2,KB7
+//  10090       | K100,Spu100_openFS,K103,K108                          | KA80_KA81_KB80_KB81,KB3,KB8
+//  10091       | K100,Spu100_openFS,K104,K109                          | KA80_KA81_KB80_KB81,KB4,KB9
+//  10092       | K100,Spu100_openFS,K110,K113                          | KA80_KA81_KB80_KB81,KB10,KB13
+//  10093       | K100,Spu100_openFS,K111,K114                          | KA80_KA81_KB80_KB81,KB11,KB14
+//  10094       | K100,Spu100_openFS,K112,K115                          | KA80_KA81_KB80_KB81,KB12,KB15
+// ============================================================
+
+// ============================================================
+//  SECTORB TABLE
+// ============================================================
+//  Test Number                          | OldHIB-B                                                                     | NewHIB-B
+//  ------------------------------------|------------------------------------------------------|------------------------------------------------------
+//  20081       | Spu100_openFS,K001,K006                               | KA80_KA81_KB80_KB81,KA1,KA6
+//  20082       | Spu100_openFS,K002,K007                               | KA80_KA81_KB80_KB81,KA2,KA7
+//  20083       | Spu100_openFS,K003,K008                               | KA80_KA81_KB80_KB81,KA3,KA8
+//  20084       | Spu100_openFS,K004,K009                               | KA80_KA81_KB80_KB81,KA4,KA9
+//  20085       | Spu100_openFS,K010,K013                               | KA80_KA81_KB80_KB81,KA10,KA13
+//  20086       | Spu100_openFS,K011,K014                               | KA80_KA81_KB80_KB81,KA11,KA14
+//  20087       | Spu100_openFS,K012,K015                               | KA80_KA81_KB80_KB81,KA12,KA15
+//  20088       | Spu100_openFS,K101,K106                               | KA80_KA81_KB80_KB81,KB1,KB6
+//  20089       | Spu100_openFS,K102,K107                               | KA80_KA81_KB80_KB81,KB2,KB7
+//  20090       | Spu100_openFS,K103,K108                               | KA80_KA81_KB80_KB81,KB3,KB8
+//  20091       | Spu100_openFS,K104,K109                               | KA80_KA81_KB80_KB81,KB4,KB9
+//  20092       | Spu100_openFS,K110,K113                               | KA80_KA81_KB80_KB81,KB10,KB13
+//  20093       | Spu100_openFS,K111,K114                               | KA80_KA81_KB80_KB81,KB11,KB14
+//  20094       | Spu100_openFS,K112,K115                               | KA80_KA81_KB80_KB81,KB12,KB15
+// ============================================================
+
+
+Addtional Notes:
+1. Pin Map Consideration
+        RS1_SP112_1 = SPU112 channel 2
+        RS1_SP112_2 = SPU112 channel 3
+        RS1_APU12_1 = APU12 channel 0
+        RS1_APU12_2 = APU12 channel 1
+        RS1_APU12_3 = APU12 channel 2
+        RS1_APU12_4 = APU12 channel 3
+        RS1_APU12_5 = APU12 channel 4
+        RS1_APU12_6 = APU12 channel 5
+        RS1_APU12_7 = APU12 channel 6
+        RS1_APU12_8 = APU12 channel 7
+        RS1_APU12_9 = APU12 channel 8
+        RS1_APU12_10 = APU12 channel 9
+        RS1_APU12_11 = APU12 channel 10
+        RS1_APU12_12 = APU12 channel 11
+        RS1_HPU_1 = HPU 94
+        RS1_HPU_2 = HPU 99
+        RS1_HPU_3 = HPU 89
+        RS1_HPU_4 = HPU 92
+
+        RS2_SP112_1 = SPU112 channel 2
+        RS2_SP112_2 = SPU112 channel 3
+        RS2_APU12_1 = APU12 channel 0
+        RS2_APU12_2 = APU12 channel 1
+        RS2_APU12_3 = APU12 channel 2
+        RS2_APU12_4 = APU12 channel 3
+        RS2_APU12_5 = APU12 channel 4
+        RS2_APU12_6 = APU12 channel 5
+        RS2_APU12_7 = APU12 channel 6
+        RS2_APU12_8 = APU12 channel 7
+        RS2_APU12_9 = APU12 channel 8
+        RS2_APU12_10 = APU12 channel 9
+        RS2_APU12_11 = APU12 channel 10
+        RS2_APU12_12 = APU12 channel 11
+
+2. Test Condition Variables Consideration
+        All the values are extracted from respective Datasheet Editor of MST.
+        Sector A with NewHIB-A = DibChecker_A_newHIBA.pds
+        Sector A with OldHIB-A = DibChecker_A_oldHIBA.pds
+        Sector B with NewHIB-B = DibChecker_B_newHIBB.pds
+        Sector B with OldHIB-B = DibChecker_B_oldHIBB.pds

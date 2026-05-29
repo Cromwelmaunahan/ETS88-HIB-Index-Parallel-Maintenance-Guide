@@ -1,0 +1,104 @@
+Test Function Name:     TF_HWID
+CPP File Name:          HWID.cpp
+
+// Resource Status and Condition
+// ============================================================
+//  SECTORA TABLE
+// ============================================================
+//  Test Number                              | OldHIB-A                                                                     | NewHIB-A
+//  ------------------------------------|------------------------------------------------------|------------------------------------------------------
+//  30000           | Acessing HIB Onewire Chip; MEAS DibCheckModulesUtility::owReadRomCodeSkipMode_HIB() over OneWire bus | same as OldHIB-A
+//  30001           | Acessing HIB Onewire Chip; MEAS DibCheckModulesUtility::owReadREVandSN_HIB() [results_HIB.at(0)*0.0001] | same as OldHIB-A
+//  30002           | Acessing HIB Onewire Chip; MEAS DibCheckModulesUtility::owReadREVandSN_HIB() [results_HIB.at(1)] | same as OldHIB-A
+//  30003           | Acessing TIB Onewire Chip; MEAS DibCheckModulesUtility::owReadRomCodeSkipMode_TIB() | same as OldHIB-A
+//  30004           | Acessing TIB Onewire Chip; MEAS DibCheckModulesUtility::owReadREVandSN_TIB() [results_TIB.at(0)*0.0001] | same as OldHIB-A
+//  30005           | Acessing TIB Onewire Chip; MEAS DibCheckModulesUtility::owReadREVandSN_TIB() [results_TIB.at(1)] | same as OldHIB-A
+//  30006           | Acessing Inductor Box Onewire Chip; MEAS DibCheckModulesUtility::owReadDataBetweenNullTerminators(60, 0) [results_INDBOXorLCRTRU.at(0)] | same as OldHIB-A
+// ============================================================
+
+// ============================================================
+//  SECTORB TABLE
+// ============================================================
+//  Test Number                              | OldHIB-B                                                                     | NewHIB-B
+//  ------------------------------------|------------------------------------------------------|------------------------------------------------------
+//  40000             | Acessing HIB Onewire Chip; MEAS DibCheckModulesUtility::owReadRomCodeSkipMode_HIB() over OneWire bus | same as OldHIB-B
+//  40001             | Acessing HIB Onewire Chip; MEAS DibCheckModulesUtility::owReadREVandSN_HIB() [results_HIB.at(0)*0.0001] | same as OldHIB-B
+//  40002             | Acessing HIB Onewire Chip; MEAS DibCheckModulesUtility::owReadREVandSN_HIB() [results_HIB.at(1)] | same as OldHIB-B
+//  40003             | Acessing TIB Onewire Chip; MEAS DibCheckModulesUtility::owReadRomCodeSkipMode_TIB() | same as OldHIB-B
+//  40004             | Acessing TIB Onewire Chip; MEAS DibCheckModulesUtility::owReadREVandSN_TIB() [results_TIB.at(0)*0.0001] | same as OldHIB-B
+//  40005             | Acessing TIB Onewire Chip; MEAS DibCheckModulesUtility::owReadREVandSN_TIB() [results_TIB.at(1)] | same as OldHIB-B
+//  40006             | Acessing LCR_TRU Module Onewire Chip; MEAS DibCheckModulesUtility::owReadREVandSN_LCRTRU() [results_INDBOXorLCRTRU.at(1)] | same as OldHIB-B
+// ============================================================
+
+// Relay Status
+// ============================================================
+//  SECTORA TABLE
+// ============================================================
+//  Test Number                              | OldHIB-A                                                                     | NewHIB-A
+//  ------------------------------------|------------------------------------------------------|------------------------------------------------------
+//  30000             | Enb1WireEEPROM | (none)
+//  30001             | Enb1WireEEPROM | (none)
+//  30002             | Enb1WireEEPROM | (none)
+//  30003             | Enb1WireEEPROM | (none)
+//  30004             | Enb1WireEEPROM | (none)
+//  30005             | Enb1WireEEPROM | (none)
+//  30006             | Enb1WireEEPROM | (none)
+// ============================================================
+
+// ============================================================
+//  SECTORB TABLE
+// ============================================================
+//  Test Number                              | OldHIB-B                                                                     | NewHIB-B
+//  ------------------------------------|------------------------------------------------------|------------------------------------------------------
+//  40000             | Enb1WireEEPROM | (none)
+//  40001             | Enb1WireEEPROM | (none)
+//  40002             | Enb1WireEEPROM | (none)
+//  40003             | Enb1WireEEPROM | (none)
+//  40004             | Enb1WireEEPROM | (none)
+//  40005             | Enb1WireEEPROM | (none)
+//  40006             | Enb1WireEEPROM | (none)
+// ============================================================
+
+
+Addtional Notes:
+1. Pin Map Consideration
+        RS1_SP112_1 = SPU112 channel 2
+        RS1_SP112_2 = SPU112 channel 3
+        RS1_APU12_1 = APU12 channel 0
+        RS1_APU12_2 = APU12 channel 1
+        RS1_APU12_3 = APU12 channel 2
+        RS1_APU12_4 = APU12 channel 3
+        RS1_APU12_5 = APU12 channel 4
+        RS1_APU12_6 = APU12 channel 5
+        RS1_APU12_7 = APU12 channel 6
+        RS1_APU12_8 = APU12 channel 7
+        RS1_APU12_9 = APU12 channel 8
+        RS1_APU12_10 = APU12 channel 9
+        RS1_APU12_11 = APU12 channel 10
+        RS1_APU12_12 = APU12 channel 11
+        RS1_HPU_1 = HPU 94
+        RS1_HPU_2 = HPU 99
+        RS1_HPU_3 = HPU 89
+        RS1_HPU_4 = HPU 92
+
+        RS2_SP112_1 = SPU112 channel 2
+        RS2_SP112_2 = SPU112 channel 3
+        RS2_APU12_1 = APU12 channel 0
+        RS2_APU12_2 = APU12 channel 1
+        RS2_APU12_3 = APU12 channel 2
+        RS2_APU12_4 = APU12 channel 3
+        RS2_APU12_5 = APU12 channel 4
+        RS2_APU12_6 = APU12 channel 5
+        RS2_APU12_7 = APU12 channel 6
+        RS2_APU12_8 = APU12 channel 7
+        RS2_APU12_9 = APU12 channel 8
+        RS2_APU12_10 = APU12 channel 9
+        RS2_APU12_11 = APU12 channel 10
+        RS2_APU12_12 = APU12 channel 11
+
+2. Test Condition Variables Consideration
+        All the values are extracted from respective Datasheet Editor of MST.
+        Sector A with NewHIB-A = DibChecker_A_newHIBA.pds
+        Sector A with OldHIB-A = DibChecker_A_oldHIBA.pds
+        Sector B with NewHIB-B = DibChecker_B_newHIBB.pds
+        Sector B with OldHIB-B = DibChecker_B_oldHIBB.pds
