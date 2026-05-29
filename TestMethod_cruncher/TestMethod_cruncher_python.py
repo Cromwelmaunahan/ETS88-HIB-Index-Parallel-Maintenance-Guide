@@ -3,8 +3,8 @@ import os
 from datetime import datetime
 
 
-SOURCE_FOLDER = r"C:\Users\maunahan\Projects\SOFTWARES\GIT_Modified_codes\gitlab\TestMethod_txtfiles"
-OUTPUT_HTML = r"C:\Users\maunahan\Projects\SOFTWARES\GIT_Modified_codes\gitlab\TestMethod_cruncher\test_methods_report.html"
+SOURCE_FOLDER = r"C:\Users\maunahan\Projects\SOFTWARES\ETS88-HIB-Index-Parallel-Maintenance-Guide\TestMethod_txtfiles"
+OUTPUT_HTML = r"C:\Users\maunahan\Projects\SOFTWARES\ETS88-HIB-Index-Parallel-Maintenance-Guide\TestMethod_cruncher\test_methods_report.html"
 
 
 def _is_separator(inner):
