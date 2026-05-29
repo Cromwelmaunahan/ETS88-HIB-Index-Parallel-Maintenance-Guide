@@ -1,3 +1,4 @@
+import base64
 import json
 import os
 from datetime import datetime
@@ -5,6 +6,16 @@ from datetime import datetime
 
 SOURCE_FOLDER = r"C:\Users\maunahan\Projects\SOFTWARES\ETS88-HIB-Index-Parallel-Maintenance-Guide\TestMethod_txtfiles"
 OUTPUT_HTML = r"C:\Users\maunahan\Projects\SOFTWARES\ETS88-HIB-Index-Parallel-Maintenance-Guide\TestMethod_cruncher\test_methods_report.html"
+LOGO_FILE = r"C:\Users\maunahan\Projects\SOFTWARES\ETS88-HIB-Index-Parallel-Maintenance-Guide\TestMethod_cruncher\Infineon-Logo.svg"
+
+
+def load_logo_data_uri(path):
+    try:
+        with open(path, "rb") as f:
+            encoded = base64.b64encode(f.read()).decode("ascii")
+        return f"data:image/svg+xml;base64,{encoded}"
+    except OSError:
+        return ""
 
 
 def _is_separator(inner):
@@ -211,6 +222,7 @@ def create_html_page(folder_path, output_file):
         [f'                <option value="{item["name"]}">{os.path.splitext(item["name"])[0]}</option>' for item in files]
     )
     catalog_rows_html = build_catalog_rows(files)
+    logo_src = load_logo_data_uri(LOGO_FILE)
 
     html_content = f"""<!DOCTYPE html>
 <html lang="en">
@@ -504,7 +516,7 @@ def create_html_page(folder_path, output_file):
                     <p class="prepared-by">Last Modified: <span id="metaModified">-</span></p>
                 </div>
                 <img class="brand-logo"
-                     src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Infineon-Logo.svg"
+                     src="{logo_src}"
                      alt="Infineon Technologies AG" />
             </header>
 
