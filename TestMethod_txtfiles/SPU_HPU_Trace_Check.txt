@@ -1,0 +1,202 @@
+Test Function Name:     TF_SPU_HPU_Test
+CPP File Name:          SPU_HPU_Test.cpp
+
+// Resource Status and Condition
+// ============================================================
+//  SECTORA TABLE
+// ============================================================
+//  Test Number                                                   | OldHIB-A                                                                                          | NewHIB-A
+//  ------------------------------------|------------------------------------------------------|------------------------------------------------------
+//  1200          | APU12 CH0: Force Voltage = 10V, Force Current = 1mA, Measure Voltage                      | same as OldHIB-A
+//  1201          | APU12 CH0: Force Voltage = 10V, Force Current = 1mA, Measure Voltage                      | same as OldHIB-A
+//  1202               | APU12 CH0: Force Voltage = 10V, Measure Current, Calculate equivalent Resistance                      | same as OldHIB-A
+//  1203                    | APU12 CH0: Force Voltage = 0V, Force Current = 1mA, Measure Voltage                      | same as OldHIB-A
+//  1204                   | APU12 CH0: Force Current = 1mA, Measure Voltage                      | same as OldHIB-A
+//  1205                   | APU12 CH0: Force Current = 1mA, Measure Voltage                      | same as OldHIB-A
+//  1206                   | APU12 CH0: Force Current = 1mA, Measure Voltage                      | same as OldHIB-A
+//  1207                   | APU12 CH0: Force Current = 1mA, Measure Voltage                      | same as OldHIB-A
+//  1208               | APU12 CH0: Force Voltage = 10V, Measure Current, Calculate equivalent Resistance                      | same as OldHIB-A
+//  1209          | APU12 CH2:: Force Voltage = 10V, Force Current = 1mA, Measure Voltage                      | same as OldHIB-A
+//  1210          | APU12 CH2:: Force Voltage = 10V, Force Current = 1mA, Measure Voltage                      | same as OldHIB-A
+//  1211          | APU12 CH2:: Force Voltage = 10V, Force Current = 1mA, Measure Voltage                      | same as OldHIB-A
+//  1212                    | APU12 CH2:: Force Voltage = 0V, Force Current = 1mA, Measure Voltage                      | same as OldHIB-A
+//  1213                   | APU12 CH2:: Force Current = 1mA, Measure Voltage                      | same as OldHIB-A
+//  1214               | APU12 CH2:: Force Voltage = 10V, Measure Current, Calculate equivalent Resistance                      | same as OldHIB-A
+//  1215            | APU12 CH8: Force Voltage = 10V, Force Current = 1mA, Measure Voltage                      | same as OldHIB-A
+//  1216            | APU12 CH8: Force Voltage = 10V, Force Current = 1mA, Measure Voltage                      | same as OldHIB-A
+//  1217            | APU12 CH8: Force Voltage = 10V, Force Current = 1mA, Measure Voltage                      | same as OldHIB-A
+//  1218                 | APU12 CH8: Force Voltage = 10V, Measure Current, Calculate equivalent Resistance                      | same as OldHIB-A
+//  1219            | APU12 CH8: Force Voltage = 10V, Force Current = 1mA, Measure Voltage                      | same as OldHIB-A
+//  1220             | APU12 CH8: Force Voltage = 10V, Force Current = 1mA, Measure Voltage                      | same as OldHIB-A
+//  1221                      | APU12 CH8: Force Voltage = 0V, Force Current = 1mA, Measure Voltage                      | same as OldHIB-A
+//  1222                     | APU12 CH8: Force Current = 1mA, Measure Voltage                      | same as OldHIB-A
+//  1223                 | APU12 CH8: Force Voltage = 10V, Measure Current, Calculate equivalent Resistance                      | same as OldHIB-A
+//  1224             | APU12 CH6: Force Voltage = 10V, Force Current = 1mA, Measure Voltage                      | same as OldHIB-A
+//  1225             | APU12 CH6: Force Voltage = 10V, Force Current = 1mA, Measure Voltage                      | same as OldHIB-A
+//  1226                 | APU12 CH6: Force Voltage = 10V, Measure Current, Calculate equivalent Resistance                      | same as OldHIB-A
+//  1227                      | APU12 CH6: Force Voltage = 0V, Force Current = 1mA, Measure Voltage                      | same as OldHIB-A
+//  1228                     | APU12 CH6: Force Current = 1mA, Measure Voltage                      | same as OldHIB-A
+//  1229                     | APU12 CH6: Force Current = 1mA, Measure Voltage                      | same as OldHIB-A
+//  1230                     | APU12 CH6: Force Current = 1mA, Measure Voltage                      | same as OldHIB-A
+//  1231                      | APU12 CH6: Force Current = 1mA, Measure Voltage                      | same as OldHIB-A
+//  1232                 | APU12 CH6: Force Voltage = 10V, Measure Current, Calculate equivalent Resistance                      | same as OldHIB-A
+//  1233           | APU12 CH1: Force Voltage = 10V, Force Current = 1mA, Measure Voltage                      | same as OldHIB-A
+//  1234           | APU12 CH1: Force Voltage = 10V, Force Current = 1mA, Measure Voltage                      | same as OldHIB-A
+//  1235           | APU12 CH1: Force Voltage = 10V, Force Current = 1mA, Measure Voltage                      | same as OldHIB-A
+//  1236           | APU12 CH1: Force Voltage = 10V, Force Current = 1mA, Measure Voltage                      | same as OldHIB-A
+//  1237                    | APU12 CH1: Force Voltage = 0V, Force Current = 1mA, Measure Voltage                      | same as OldHIB-A
+//  1238                    | APU12 CH1: Force Current = 1mA, Measure Voltage                      | same as OldHIB-A
+//  1239               | APU12 CH1: Force Voltage = 10V, Measure Current, Calculate equivalent Resistance                      | same as OldHIB-A
+//  1240           | APU12 CH7: Force Voltage = 10V, Force Current = 1mA, Measure Voltage                      | same as OldHIB-A
+//  1241           | APU12 CH7: Force Voltage = 10V, Force Current = 1mA, Measure Voltage                      | same as OldHIB-A
+//  1242           | APU12 CH7: Force Voltage = 10V, Force Current = 1mA, Measure Voltage                      | same as OldHIB-A
+//  1243           | APU12 CH7: Force Voltage = 10V, Force Current = 1mA, Measure Voltage                      | same as OldHIB-A
+//  1244                    | APU12 CH7: Force Voltage = 0V, Force Current = 1mA, Measure Voltage                      | same as OldHIB-A
+//  1245                    | APU12 CH7: Force Current = 1mA, Measure Voltage                      | same as OldHIB-A
+//  1246               | APU12 CH7: Force Voltage = 10V, Measure Current, Calculate equivalent Resistance                      | same as OldHIB-A
+//  1247           | APU12 CH1: Force Voltage = 10V, Force Current = 1mA, Measure Voltage                      | same as OldHIB-A
+//  1248           | APU12 CH1: Force Voltage = 10V, Force Current = 1mA, Measure Voltage                      | same as OldHIB-A
+//  1249           | APU12 CH1: Force Voltage = 10V, Force Current = 1mA, Measure Voltage                      | same as OldHIB-A
+//  1250           | APU12 CH7: Force Voltage = 10V, Force Current = 1mA, Measure Voltage                      | same as OldHIB-A
+//  1251           | APU12 CH7: Force Voltage = 10V, Force Current = 1mA, Measure Voltage                      | same as OldHIB-A
+//  1252           | APU12 CH7: Force Voltage = 10V, Force Current = 1mA, Measure Voltage                      | same as OldHIB-A
+//  1253          | HPU94: Force Current = 5mA; SPU112 CH2: Force Voltage = 5V, Measure Current                      | same as OldHIB-A
+//  1254          | HPU94: Force Current = 5mA; SPU112 CH2: Force Voltage = 5V, Measure Voltage (using HPU)                      | same as OldHIB-A
+//  1255          | HPU99: Force Current = 5mA; SPU112 CH3: Force Voltage = 5V, Measure Current                      | same as OldHIB-A
+//  1256          | HPU99: Force Current = 5mA; SPU112 CH3: Force Voltage = 5V, Measure Voltage (using HPU)                      | same as OldHIB-A
+//  1257          | HPU89: Force Current = 5mA; SPU112 CH2: Force Voltage = 5V, Measure Current                      | same as OldHIB-A
+//  1258          | HPU89: Force Current = 5mA; SPU112 CH2: Force Voltage = 5V, Measure Voltage (using HPU)                      | same as OldHIB-A
+//  1259          | HPU92: Force Current = 5mA; SPU112 CH2: Force Voltage = 5V, Measure Current                      | same as OldHIB-A
+//  1260          | HPU92: Force Current = 5mA; SPU112 CH2: Force Voltage = 5V, Measure Voltage (using HPU)                      | same as OldHIB-A
+// ============================================================
+
+// ============================================================
+//  SECTORB TABLE
+// ============================================================
+//  Test Number                                                   | OldHIB-B                                                                                          | NewHIB-B
+//  ------------------------------------|------------------------------------------------------|------------------------------------------------------
+//  Selected Test Label is not tested on SectorB                               | N/A                           | N/A
+// ============================================================
+
+// Relay Status
+// ============================================================
+//  SECTORA TABLE
+// ============================================================
+//  Test Number                                                   | OldHIB-A                                                                                          | NewHIB-A
+//  ------------------------------------|------------------------------------------------------|------------------------------------------------------
+//  1200         | K100,K044,K144,K001,Lim_SF_1A,K055,K52_K56,K006                      | KA44,KB44,KA1,KSA1,KH155,KH255,KL155,KL255,K152_K156,KA6
+//  1201         | K100,K044,K144,K001,Lim_SF_1A,K055,K52_K56                      | KA44,KB44,KA1,KSA1,KH155,KH255,KL155,KL255,K152_K156
+//  1202              | K100,K044,K144,K001,Lim_SF_1A,K055,K52_K56,K006                      | KA44,KB44,KA1,KSA1,KH155,KH255,KL155,KL255,K152_K156,KA6
+//  1203                   | K100,K144,K001,K006                      | KB44,KA1,KA6
+//  1204                  | K100,K144,K001,K006,K045                      | KB44,KA1,KA6,KA45
+//  1205                  | K100,K144,K001,K006,K044                      | KB44,KA1,KA6,KA44
+//  1206                  | K100,K144,K001,K006,Spu100_openFS                      | KB44,KA1,KA6,KA80_KA81_KB80_KB81
+//  1207                  | K100,K144,K001,K006,K048                      | KB44,KA1,KA6,KA48
+//  1208              | K100,K144,K001,K006                      | KB44,KA1,KA6
+//  1209         | K100,K144,K010,K043,K013                      | KB44,KA10,KA43,KA13
+//  1210         | K100,K144,K010,K013                      | KB44,KA10,KA13
+//  1211         | K100,K144,K010,K043                      | KB44,KA10,KA43
+//  1212                   | K100,K144,K043,K013,K010                      | KB44,KA43,KA13,KA10
+//  1213                  | K100,K144,K043,K013,K010,Spu100_openFS                      | KB44,KA43,KA13,KA10,KA80_KA81_KB80_KB81
+//  1214              | K100,K144,Lim_DF_1A,K043,K013,K010                      | KB44,KDA1,KA43,KA13,KA10
+//  1215           | K100,K144,K110,K055,K152_K156,Lim_DF_1B,K113                      | KB44,KB10,KH155,KH255,KL155,KL255,K252_K256,KDB1,KB13
+//  1216           | K100,K144,K110,K055,K152_K156,K113                      | KB44,KB10,KH155,KH255,KL155,KL255,K252_K256,KB13
+//  1217           | K100,K144,K110,K055,K152_K156,Lim_DF_1B                      | KB44,KB10,KH155,KH255,KL155,KL255,K252_K256,KDB1
+//  1218                | K100,K144,Lim_DF_1B,K113,K110,K055,K152_K156                      | KB44,KDB1,KB13,KB10,KH155,KH255,KL155,KL255,K252_K256
+//  1219           | K100,K144,K110,K113,K143                      | KB44,KB10,KB13,KB43
+//  1220            | K100,K144,K110,K113                      | KB44,KB10,KB13
+//  1221                     | K100,K144,K110,K113,K143                      | KB44,KB10,KB13,KB43
+//  1222                    | K100,K144,K110,K113,K143,Spu100_openFS                      | KB44,KB10,KB13,KB43,KA80_KA81_KB80_KB81
+//  1223                | K100,K144,K110,K113,K143                      | KB44,KB10,KB13,KB43
+//  1224            | K100,K144,K101,Lim_SF_1B,K152_K156,K055,K106                      | KB44,KB1,KSB1,K252_K256,KH155,KH255,KL155,KL255,KB6
+//  1225            | K100,K144,K101,Lim_SF_1B,K152_K156,K055                      | KB44,KB1,KSB1,K252_K256,KH155,KH255,KL155,KL255
+//  1226                | K100,K144,K106,K101,Lim_SF_1B,K152_K156,K055                      | KB44,KB6,KB1,KSB1,K252_K256,KH155,KH255,KL155,KL255
+//  1227                     | K100,K101,K106                      | KB1,KB6
+//  1228                    | K100,K101,K106,K145                      | KB1,KB6,KB45
+//  1229                    | K100,K101,K106,K144                      | KB1,KB6,KB44
+//  1230                    | K100,K101,K106,Spu100_openFS                      | KB1,KB6,KA80_KA81_KB80_KB81
+//  1231                     | K100,K101,K106,K148                      | KB1,KB6,KB48
+//  1232                | K100,K101,K106,Lim_SF_1B                      | KB1,KB6,KSB1
+//  1233          | K100,K004,K040,K041,K009                      | KA4,KA40,KA41,KA9
+//  1234          | K100,K004,K041,K009                      | KA4,KA41,KA9
+//  1235          | K100,K004,K040,K009                      | KA4,KA40,KA9
+//  1236          | K100,K004,K040,K041                      | KA4,KA40,KA41
+//  1237                   | K100,K040,K041,K009,K004                      | KA40,KA41,KA9,KA4
+//  1238                   | K100,K040,K041,K009,K004,K042                      | KA40,KA41,KA9,KA4,KA42
+//  1239              | K100,K040,K041,K009,K004                      | KA40,KA41,KA9,KA4
+//  1240          | K100,K104,K140,K141,K109                      | KB4,KB40,KB41,KB9
+//  1241          | K100,K104,K141,K109                      | KB4,KB41,KB9
+//  1242          | K100,K104,K140,K109                      | KB4,KB40,KB9
+//  1243          | K100,K104,K140,K141                      | KB4,KB40,KB41
+//  1244                   | K100,K104,K140,K141,K109                      | KB4,KB40,KB41,KB9
+//  1245                   | K100,K104,K140,K141,K109,K142                      | KB4,KB40,KB41,KB9,KB42
+//  1246              | K100,K104,K140,K141,K109                      | KB4,KB40,KB41,KB9
+//  1247          | K100,K004,K040,K041,K013,K047,K046                      | KA4,KA40,KA41,KA13,KA47,KA46
+//  1248          | K100,K004,K040,K041,K013,K046                      | KA4,KA40,KA41,KA13,KA46
+//  1249          | K100,K004,K040,K041,K013,K047                      | KA4,KA40,KA41,KA13,KA47
+//  1250          | K100,K104,K140,K141,K113,K147,K146                      | KB4,KB40,KB41,KB13,KB47,KB46
+//  1251          | K100,K104,K140,K141,K113,K146                      | KB4,KB40,KB41,KB13,KB46
+//  1252          | K100,K104,K140,K141,K113,K147                      | KB4,KB40,KB41,KB13,KB47
+//  1253         | K100,K055,Lim_DF_1A,K043,K52_K56,Lim_SF_1A                      | KH155,KH255,KL155,KL255,KDA1,KA43,K152_K156,KSA1
+//  1254         | K100,K055,Lim_DF_1A,K043,K52_K56,Lim_SF_1A                      | KH155,KH255,KL155,KL255,KDA1,KA43,K152_K156,KSA1
+//  1255         | K100,K055,Lim_DF_1B,K143,K152_K156,Lim_SF_1B                      | KH155,KH255,KL155,KL255,KDB1,KB43,K252_K256,KSB1
+//  1256         | K100,K055,Lim_DF_1B,K143,K152_K156,Lim_SF_1B                      | KH155,KH255,KL155,KL255,KDB1,KB43,K252_K256,KSB1
+//  1257         | K100,K255,K258,K058,Lim_DF_1A,K043,K060,Lim_SF_1A                      | KA43,KDA1,KH158,KH358,KL155,KSA1,KH355,KL158_KL258,KL358_KL458
+//  1258         | K100,K255,K258,K058,Lim_DF_1A,K043,K060,Lim_SF_1A                      | KA43,KDA1,KH158,KH358,KL155,KSA1,KH355,KL158_KL258,KL358_KL458
+//  1259         | K100,K255,K258,K058,Lim_DF_1A,K043,K060,Lim_SF_1A                      | KA43,KDA1,KH158,KH455,KH458,KL155,KSA1,KL158_KL258,KL358_KL458
+//  1260         | K100,K255,K258,K058,Lim_DF_1A,K043,K060,Lim_SF_1A                      | KA43,KDA1,KH158,KH455,KH458,KL155,KSA1,KL158_KL258,KL358_KL458
+// ============================================================
+
+// ============================================================
+//  SECTORB TABLE
+// ============================================================
+//  Test Number                                                   | OldHIB-B                                                                                          | NewHIB-B
+//  ------------------------------------|------------------------------------------------------|------------------------------------------------------
+//  Selected Test Label is not tested on SectorB                               | N/A                           | N/A
+// ============================================================
+
+
+Addtional Notes:
+1. Pin Map Consideration
+        RS1_SP112_1 = SPU112 channel 2
+        RS1_SP112_2 = SPU112 channel 3
+        RS1_APU12_1 = APU12 channel 0
+        RS1_APU12_2 = APU12 channel 1
+        RS1_APU12_3 = APU12 channel 2
+        RS1_APU12_4 = APU12 channel 3
+        RS1_APU12_5 = APU12 channel 4
+        RS1_APU12_6 = APU12 channel 5
+        RS1_APU12_7 = APU12 channel 6
+        RS1_APU12_8 = APU12 channel 7
+        RS1_APU12_9 = APU12 channel 8
+        RS1_APU12_10 = APU12 channel 9
+        RS1_APU12_11 = APU12 channel 10
+        RS1_APU12_12 = APU12 channel 11
+        RS1_HPU_1 = HPU 94
+        RS1_HPU_2 = HPU 99
+        RS1_HPU_3 = HPU 89
+        RS1_HPU_4 = HPU 92
+
+        RS2_SP112_1 = SPU112 channel 2
+        RS2_SP112_2 = SPU112 channel 3
+        RS2_APU12_1 = APU12 channel 0
+        RS2_APU12_2 = APU12 channel 1
+        RS2_APU12_3 = APU12 channel 2
+        RS2_APU12_4 = APU12 channel 3
+        RS2_APU12_5 = APU12 channel 4
+        RS2_APU12_6 = APU12 channel 5
+        RS2_APU12_7 = APU12 channel 6
+        RS2_APU12_8 = APU12 channel 7
+        RS2_APU12_9 = APU12 channel 8
+        RS2_APU12_10 = APU12 channel 9
+        RS2_APU12_11 = APU12 channel 10
+        RS2_APU12_12 = APU12 channel 11
+        RS2_SP500_1 = SPU500 channel 6
+        RS2_SP500_2 = SPU500 channel 7
+
+2. Test Condition Variables Consideration
+        All the values are extracted from respective Datasheet Editor of MST.
+        Sector A with NewHIB-A = DibChecker_A_newHIBA.pds
+        Sector A with OldHIB-A = DibChecker_A_oldHIBA.pds
+        Sector B with NewHIB-B = DibChecker_B_newHIBB.pds
+        Sector B with OldHIB-B = DibChecker_B_oldHIBB.pds

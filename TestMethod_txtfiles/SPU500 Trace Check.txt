@@ -1,42 +1,45 @@
-Test Function Name:     TF_Termination_Module
-CPP File Name:          Termination_Module.cpp
+Test Function Name:     TF_SPU500_Check
+CPP File Name:          SPU500_Check.cpp
 
 // Resource Status and Condition
 // ============================================================
 //  SECTORA TABLE
 // ============================================================
-//  Test Number                          | OldHIB-A                                                                     | NewHIB-A
-//  ------------------------------------|------------------------------------------------------|------------------------------------------------------
+//  Test Number              | OldHIB-A                                                                                                                                                          | NewHIB-B
+//  -----------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------
 //  Selected Test Label is not tested on SectorA           | N/A      | N/A
 // ============================================================
+
 
 // ============================================================
 //  SECTORB TABLE
 // ============================================================
-//  Test Number                          | OldHIB-B                                                                     | NewHIB-B
+//  Test Number                              | OldHIB-B                                                                     | NewHIB-B
 //  ------------------------------------|------------------------------------------------------|------------------------------------------------------
-//  30003  | [SKIPPED]                                        | APU12 CH1: Force Current = 2mA, Measure Voltage
-//  30004  | [SKIPPED]                                        | APU12 CH1: Force Voltage = 0.1V, Measure Current
-//  30005  | [SKIPPED]                                        | APU12 CH1: Force Current = 2mA, Measure Voltage
-//  30006  | [SKIPPED]                                        | APU12 CH1: Force Voltage = 0.1V, Measure Current
-//  30007  | [SKIPPED]                                        | APU12 CH1: Force Current = 2mA, Measure Voltage
-//  30008  | [SKIPPED]                                        | APU12 CH1: Force Voltage = 0.1V, Measure Current
-//  30009  | [SKIPPED]                                        | APU12 CH0: Force Current = 2mA, Measure Voltage
-//  30010  | [SKIPPED]                                        | APU12 CH0: Force Voltage = 0.1V, Measure Current
-//  30011  | [SKIPPED]                                        | APU12 CH7: Force Current = 2mA, Measure Voltage
-//  30012  | [SKIPPED]                                        | APU12 CH7: Force Voltage = 0.1V, Measure Current
-//  30013  | [SKIPPED]                                        | APU12 CH1: Force Current = 2mA, Measure Voltage
-//  30014  | [SKIPPED]                                        | APU12 CH1: Force Voltage = 0.1V, Measure Current
-//  30015  | [SKIPPED]                                        | APU12 CH7: Force Current = 2mA, Measure Voltage
-//  30016  | [SKIPPED]                                        | APU12 CH7: Force Voltage = 0.1V, Measure Current
-//  30017  | [SKIPPED]                                        | APU12 CH6: Force Current = 2mA, Measure Voltage
-//  30018  | [SKIPPED]                                        | APU12 CH6: Force Voltage = 0.1V, Measure Current
-//  30019  | [SKIPPED]                                        | APU12 CH6: Force Current = 2mA, Measure Voltage
-//  30020  | [SKIPPED]                                        | APU12 CH6: Force Voltage = 0.1V, Measure Current
-//  30021  | [SKIPPED]                                        | APU12 CH1: Force Current = 2mA, Measure Voltage
-//  30022  | [SKIPPED]                                        | APU12 CH1: Force Voltage = 0.1V, Measure Current
-//  30023  | [SKIPPED]                                        | APU12 CH7: Force Current = 2mA, Measure Voltage
-//  30024  | [SKIPPED]                                        | APU12 CH7: Force Voltage = 0.1V, Measure Current
+//  2300    | SPU500 CH6: Force Voltage = 5V; SPU500 CH7: Force Current = 2mA, Measure Current | same
+//  2301    | SPU500 CH6: SP_FV=mdTestVolatge; SPU500 CH7: Force Current = 2mA, Measure Voltage | same
+//  2302    | SPU500 CH6: Force Voltage = 5V; SPU500 CH7: Force Current = 2mA, Measure Current | same
+//  2303    | SPU500 CH6: SP_FV=mdTestVolatge; SPU500 CH7: Force Current = 2mA, Measure Voltage | same
+//  2304    | SPU500 CH6: Force Voltage = 5V; SPU500 CH7: Force Current = 2mA, Measure Current | same
+//  2305    | SPU500 CH6: SP_FV=mdTestVolatge; SPU500 CH7: Force Current = 2mA, Measure Voltage | same
+//  2306    | APU12 CH2: Force Voltage = 10V, Force Current = 10mA, Measure Voltage | same
+//  2307    | APU12 CH2: Force Voltage = 10V, Force Current = 10mA, Measure Voltage | same
+//  2308    | APU12 CH2: Force Voltage = 10V, Force Current = 10mA, Measure Voltage | same
+//  2309    | APU12 CH2: Force Voltage = 10V, Force Current = 10mA, Measure Voltage | same
+//  2310    | APU12 CH0: Force Voltage = 10V, Force Current = 10mA, Measure Voltage | same
+//  2311    | APU12 CH0: Force Voltage = 10V, Force Current = 10mA, Measure Voltage | same
+//  2312    | APU12 CH0: Force Voltage = 10V, Force Current = 10mA, Measure Voltage | same
+//  2313    | APU12 CH6: Force Voltage = 10V, Force Current = 1mA, Measure Voltage | same
+//  2314    | APU12 CH6: Force Voltage = 10V, Force Current = 1mA, Measure Voltage | same
+//  2315    | APU12 CH8: Force Voltage = 10V, Force Current = 10mA, Measure Voltage | same
+//  2316    | APU12 CH8: Force Voltage = 10V, Force Current = 10mA, Measure Voltage | same
+//  2317    | APU12 CH8: Force Voltage = 10V, Force Current = 10mA, Measure Voltage | same
+//  2318    | APU12 CH8: Force Voltage = 10V, Force Current = 10mA, Measure Voltage | same
+//  2319    | APU12 CH6: Force Voltage = 10V, Force Current = 10mA, Measure Voltage | same
+//  2320    | APU12 CH6: Force Voltage = 10V, Force Current = 10mA, Measure Voltage | same
+//  2321    | APU12 CH6: Force Voltage = 10V, Force Current = 10mA, Measure Voltage | same
+//  2322    | APU12 CH0: Force Voltage = 10V, Force Current = 1mA, Measure Voltage | same
+//  2323    | APU12 CH0: Force Voltage = 10V, Force Current = 1mA, Measure Voltage | same
 // ============================================================
 
 
@@ -44,38 +47,39 @@ CPP File Name:          Termination_Module.cpp
 // ============================================================
 //  SECTORA TABLE
 // ============================================================
-//  Test Number                          | OldHIB-A                                                                     | NewHIB-A
-//  ------------------------------------|------------------------------------------------------|------------------------------------------------------
+//  Test Number              | OldHIB-A                                                                                                                                                          | NewHIB-B
+//  -----------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------
 //  Selected Test Label is not tested on SectorA           | N/A      | N/A
-// ============================================================
 
 // ============================================================
 //  SECTORB TABLE
 // ============================================================
-//  Test Number                          | OldHIB-B                                                                     | NewHIB-B
+//  Test Number                              | OldHIB-B                                                                     | NewHIB-B
 //  ------------------------------------|------------------------------------------------------|------------------------------------------------------
-//  30003  | [SKIPPED]                                        | KA44,KB44,KGFA_GSA_SSA,KA4,KSA,KA6
-//  30004  | [SKIPPED]                                        | KA44,KB44,KA4,KSA,KA6
-//  30005  | [SKIPPED]                                        | KA44,KB44,KGFA_GSA_SSA,K101GD,K64,K65,K66,K67,KA68_KA69,KSA,KA6
-//  30006  | [SKIPPED]                                        | KA44,KB44,K101GD,K64,K65,K66,K67,KA68_KA69,KSA,KA6
-//  30007  | [SKIPPED]                                        | KA44,KB44,KGFA_GSA_SSA,KA4,KA20,KA21,KSB,KB6
-//  30008  | [SKIPPED]                                        | KA44,KB44,KA4,KA20,KA21,KSB,KB6
-//  30009  | [SKIPPED]                                        | KA44,KB44,KLCA,KA1,KSA,KA6
-//  30010  | [SKIPPED]                                        | KA44,KB44,KA1,KSA,KA6
-//  30011  | [SKIPPED]                                        | KA44,KB44,KGFB_GSB_SSB,KB4,KSB,KB6
-//  30012  | [SKIPPED]                                        | KA44,KB44,KB4,KSB,KB6
-//  30013  | [SKIPPED]                                        | KA44,KB44,KGFB_GSB_SSB,K101GD,K64,K65,K66,K67,KB68_KB69,KSB,KB6
-//  30014  | [SKIPPED]                                        | KA44,KB44,K101GD,K64,K65,K66,K67,KB68_KB69,KSB,KB6
-//  30015  | [SKIPPED]                                        | KA44,KB44,KGFB_GSB_SSB,KB4,KB20,KB21,KSA,KA6
-//  30016  | [SKIPPED]                                        | KA44,KB44,KB4,KB20,KB21,KSA,KA6
-//  30017  | [SKIPPED]                                        | KA44,KB44,KLCB,KB1,KSB,KB6
-//  30018  | [SKIPPED]                                        | KA44,KB44,KB1,KSB,KB6
-//  30019  | [SKIPPED]                                        | KA44,KB44,KSFB,KB1,KTRU4,KSB1,KSB,KB6
-//  30020  | [SKIPPED]                                        | KA44,KB44,KB1,KTRU4,KSB1,KSB,KB6
-//  30021  | [SKIPPED]                                        | KA44,KB44,KSA,KA4,KGFA_GSA_SSA,KA6
-//  30022  | [SKIPPED]                                        | KA44,KB44,KA4,KGFA_GSA_SSA,KA6
-//  30023  | [SKIPPED]                                        | KA44,KB44,KSB,KB4,KGFB_GSB_SSB,KB6
-//  30024  | [SKIPPED]                                        | KA44,KB44,KB4,KGFB_GSB_SSB,KB6
+//  2300        | K060,TRU_A,TRU_B,K160,K061,K161 | KA60,KH158,KH258,KDA1,KDB1,KL160_KL260_KL360_KL460,KSA1,KSB1,KB60,KA61,KB61
+//  2301        | K060,TRU_A,TRU_B,K160,K061,K161 | KA60,KH158,KH258,KDA1,KDB1,KL160_KL260_KL360_KL460,KSA1,KSB1,KB60,KA61,KB61
+//  2302        | K063,TRU_A,TRU_B,K163,K064,K164 | KA63,KVA71,KVA72,KVA73,KVA75,KTRU1,KTRU2,KVB71,KVB72,KVB73,KVB75,KRV52,KTRU3,KTRU4,KB63,KA64,KB64
+//  2303        | K063,TRU_A,TRU_B,K163,K064,K164 | KA63,KVA71,KVA72,KVA73,KVA75,KTRU1,KTRU2,KVB71,KVB72,KVB73,KVB75,KRV52,KTRU3,KTRU4,KB63,KA64,KB64
+//  2304        | K063,TRU_A,TRU_B,K163,K062,K162 | KA63,KVA71,KVA72,KVA73,KVA75,KTRU1,KTRU2,KVB71,KVB72,KVB73,KVB75,KRV52,KTRU3,KTRU4,KB63,KA62,KB62
+//  2305        | K063,TRU_A,TRU_B,K163,K062,K162 | KA63,KVA71,KVA72,KVA73,KVA75,KTRU1,KTRU2,KVB71,KVB72,KVB73,KVB75,KRV52,KTRU3,KTRU4,KB63,KA62,KB62
+//  2306        | K010,K089,K063,K060,K184       | KA10,KA13,KVA71,KA63,KA60,KVB71
+//  2307        | K010,K089,K060,K184            | KA10,KA13,KVA71,KA60,KVB71
+//  2308        | K010,K089,K063,K184            | KA10,KA13,KVA71,KA63,KVB71
+//  2309        | K010,K089,K063,K060            | KA10,KA13,KVA71,KA63,KA60
+//  2310        | K001,K061,K062                 | KA1,KA61,KA62
+//  2311        | K001,K062                      | KA1,KA62
+//  2312        | K001,K061                      | KA1,KA61
+//  2313        | K101,K062,K064                 | KB1,KA62,KA64
+//  2314        | K101,K062                      | KB1,KA62
+//  2315        | K110,K089,K163,K160,K084       | KB10,KB13,KVB71,KB63,KB60,KVA71
+//  2316        | K110,K089,K160,K084            | KB10,KB13,KVB71,KB60,KVA71
+//  2317        | K110,K089,K163,K084            | KB10,KB13,KVB71,KB63,KVA71
+//  2318        | K110,K089,K163,K160            | KB10,KB13,KVB71,KB63,KB60
+//  2319        | K101,K161,K162                 | KB1,KB61,KB62
+//  2320        | K101,K162                      | KB1,KB62
+//  2321        | K101,K161                      | KB1,KB61
+//  2322        | K001,K162,K164                 | KA1,KB62,KB64
+//  2323        | K001,K162                      | KA1,KB62
 // ============================================================
 
 
@@ -114,6 +118,8 @@ Addtional Notes:
         RS2_APU12_10 = APU12 channel 9
         RS2_APU12_11 = APU12 channel 10
         RS2_APU12_12 = APU12 channel 11
+        RS2_SP500_1 = SPU500 channel 6
+        RS2_SP500_2 = SPU500 channel 7
 
 2. Test Condition Variables Consideration
         All the values are extracted from respective Datasheet Editor of MST.

@@ -175,6 +175,8 @@ Addtional Notes:
         RS2_APU12_10 = APU12 channel 9
         RS2_APU12_11 = APU12 channel 10
         RS2_APU12_12 = APU12 channel 11
+        RS2_SP500_1 = SPU500 channel 6
+        RS2_SP500_2 = SPU500 channel 7
 
 2. Test Condition Variables Consideration
         All the values are extracted from respective Datasheet Editor of MST.
