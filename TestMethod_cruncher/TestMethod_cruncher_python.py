@@ -228,34 +228,19 @@ def create_html_page(folder_path, output_file):
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TXT File Explorer - Electronics Theme</title>
     <style>
-        :root {{
-            --bg-0: #eef4fb;
-            --bg-1: #dbe7f5;
-            --panel: #ffffff;
-            --text-main: #0f2540;
-            --text-soft: #4a6b8a;
-            --accent-primary: #0a66c2;
-            --accent-secondary: #0a9396;
-            --accent-success: #1f8a3b;
-            --accent-warn: #c46a00;
-            --accent-danger: #c0392b;
-            --border: #c9d8e8;
-            --row-alt: #f4f8fc;
-            --row-hover: #e4f1ff;
-        }}
-
         * {{ box-sizing: border-box; margin: 0; padding: 0; }}
 
         body {{
             font-family: "Segoe UI", "Inter", "Helvetica Neue", Arial, sans-serif;
-            color: var(--text-main);
+            color: #0f2540;
             background:
                 radial-gradient(circle at 12% 10%, #e6f0ff 0, transparent 40%),
                 radial-gradient(circle at 88% 8%, #e8f9f3 0, transparent 35%),
-                linear-gradient(160deg, var(--bg-0), var(--bg-1));
+                linear-gradient(160deg, #eef4fb, #dbe7f5);
             min-height: 100vh;
             padding: 22px;
             font-size: 15.5px;
@@ -267,8 +252,8 @@ def create_html_page(folder_path, output_file):
         .layout {{ max-width: 1280px; margin: 0 auto; display: grid; gap: 18px; }}
 
         .panel {{
-            background: var(--panel);
-            border: 1px solid var(--border);
+            background: #ffffff;
+            border: 1px solid #c9d8e8;
             border-radius: 14px;
             box-shadow: 0 6px 20px rgba(15, 37, 64, 0.08);
             overflow: hidden;
@@ -276,9 +261,9 @@ def create_html_page(folder_path, output_file):
 
         .header {{
             padding: 26px 28px;
-            border-left: 5px solid var(--accent-primary);
+            border-left: 5px solid #0a66c2;
             background: linear-gradient(90deg, #f0f7ff, #f4fbff);
-            border-bottom: 1px solid var(--border);
+            border-bottom: 1px solid #c9d8e8;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -295,28 +280,28 @@ def create_html_page(folder_path, output_file):
 
         .header h1 {{
             font-size: 1.95rem;
-            color: var(--accent-primary);
+            color: #0a66c2;
             margin-bottom: 6px;
             letter-spacing: 0.2px;
             font-weight: 700;
         }}
 
         .prepared-by {{
-            color: var(--accent-success);
+            color: #1f8a3b;
             font-weight: 700;
             font-size: 0.98rem;
         }}
 
         .controls {{ padding: 18px 28px 22px; display: grid; gap: 10px; }}
         .controls label {{
-            color: var(--accent-primary);
+            color: #0a66c2;
             font-weight: 700;
             font-size: 0.98rem;
         }}
         .controls select {{
             background: #ffffff;
-            color: var(--text-main);
-            border: 1px solid var(--border);
+            color: #0f2540;
+            border: 1px solid #c9d8e8;
             border-radius: 8px;
             padding: 11px 12px;
             font-size: 0.98rem;
@@ -324,10 +309,10 @@ def create_html_page(folder_path, output_file):
             box-shadow: 0 1px 2px rgba(15, 37, 64, 0.05);
         }}
         .controls select:focus {{
-            outline: 2px solid var(--accent-primary);
+            outline: 2px solid #0a66c2;
             outline-offset: 1px;
         }}
-        .controls p {{ color: var(--text-soft); font-size: 0.88rem; }}
+        .controls p {{ color: #4a6b8a; font-size: 0.88rem; }}
 
         .stats {{
             display: grid;
@@ -336,14 +321,14 @@ def create_html_page(folder_path, output_file):
             padding: 0 28px 22px;
         }}
         .stat {{
-            border: 1px solid var(--border);
+            border: 1px solid #c9d8e8;
             background: #f9fcff;
             border-radius: 10px;
             padding: 12px 14px;
             box-shadow: 0 1px 2px rgba(15, 37, 64, 0.04);
         }}
         .stat .label {{
-            color: var(--text-soft);
+            color: #4a6b8a;
             font-size: 0.78rem;
             margin-bottom: 4px;
             text-transform: uppercase;
@@ -351,7 +336,7 @@ def create_html_page(folder_path, output_file):
             font-weight: 700;
         }}
         .stat .value {{
-            color: var(--accent-primary);
+            color: #0a66c2;
             font-size: 1.08rem;
             font-weight: 700;
             word-break: break-word;
@@ -373,7 +358,7 @@ def create_html_page(folder_path, output_file):
 
         .table-wrap {{
             margin: 0 28px 18px;
-            border: 1px solid var(--border);
+            border: 1px solid #c9d8e8;
             border-radius: 10px;
             overflow-x: auto;
             overflow-y: hidden;
@@ -397,15 +382,15 @@ def create_html_page(folder_path, output_file):
 
         th, td {{
             padding: 10px 14px;
-            border-bottom: 1px solid var(--border);
+            border-bottom: 1px solid #c9d8e8;
             vertical-align: middle;
             text-align: left;
-            color: var(--text-main);
+            color: #0f2540;
             white-space: nowrap;
         }}
 
         th {{
-            color: var(--accent-primary);
+            color: #0a66c2;
             font-weight: 700;
             font-size: 0.82rem;
             text-transform: uppercase;
@@ -413,11 +398,11 @@ def create_html_page(folder_path, output_file):
             white-space: nowrap;
         }}
 
-        tbody tr:nth-child(even) {{ background: var(--row-alt); }}
-        tbody tr:hover {{ background: var(--row-hover); }}
+        tbody tr:nth-child(even) {{ background: #f4f8fc; }}
+        tbody tr:hover {{ background: #e4f1ff; }}
 
         td.first-col {{
-            color: var(--accent-warn);
+            color: #c46a00;
             font-weight: 700;
             white-space: nowrap;
         }}
@@ -436,10 +421,10 @@ def create_html_page(folder_path, output_file):
             background: #eaf3ff;
         }}
         .table-scroll table tbody tr:nth-child(even) td.first-col {{
-            background: var(--row-alt);
+            background: #f4f8fc;
         }}
         .table-scroll table tbody tr:hover td.first-col {{
-            background: var(--row-hover);
+            background: #e4f1ff;
         }}
 
         .badge {{
@@ -447,15 +432,15 @@ def create_html_page(folder_path, output_file):
             padding: 2px 9px;
             border-radius: 12px;
             font-size: 0.74rem;
-            border: 1px solid var(--accent-secondary);
-            color: var(--accent-secondary);
+            border: 1px solid #0a9396;
+            color: #0a9396;
             background: #effaf9;
             margin-left: 8px;
             font-weight: 700;
         }}
 
         .skipped {{
-            color: var(--accent-danger);
+            color: #c0392b;
             font-weight: 700;
             background: #fdecea;
             border: 1px solid #f3c2bd;
@@ -478,23 +463,23 @@ def create_html_page(folder_path, output_file):
         .notes-box {{
             margin: 0 28px 24px;
             padding: 14px 16px;
-            border: 1px solid var(--border);
+            border: 1px solid #c9d8e8;
             border-radius: 10px;
             background: #fbfcfe;
-            color: var(--text-main);
+            color: #0f2540;
             font-family: "Consolas", "Courier New", monospace;
             font-size: 0.92rem;
             white-space: pre-wrap;
             line-height: 1.55;
         }}
 
-        .empty {{ color: var(--text-soft); padding: 16px; text-align: center; font-style: italic; }}
+        .empty {{ color: #4a6b8a; padding: 16px; text-align: center; font-style: italic; }}
 
         .footer {{
             padding: 14px 28px 20px;
-            color: var(--text-soft);
+            color: #4a6b8a;
             font-size: 0.88rem;
-            border-top: 1px solid var(--border);
+            border-top: 1px solid #c9d8e8;
             background: #f7fafd;
         }}
 
@@ -562,17 +547,21 @@ def create_html_page(folder_path, output_file):
     </main>
 
     <script>
-        const files = {files_json};
-        const fileSelect = document.getElementById("fileSelect");
-        const hibSelect = document.getElementById("hibSelect");
-        const sectorSelect = document.getElementById("sectorSelect");
-        const metaModified = document.getElementById("metaModified");
-        const headerBody = document.getElementById("headerBody");
-        const blocksContainer = document.getElementById("blocksContainer");
-        const notesBox = document.getElementById("notesBox");
+        var files = {files_json};
+        var fileSelect = document.getElementById("fileSelect");
+        var hibSelect = document.getElementById("hibSelect");
+        var sectorSelect = document.getElementById("sectorSelect");
+        var metaModified = document.getElementById("metaModified");
+        var headerBody = document.getElementById("headerBody");
+        var blocksContainer = document.getElementById("blocksContainer");
+        var notesBox = document.getElementById("notesBox");
+
+        function strIncludes(haystack, needle) {{
+            return String(haystack).indexOf(needle) !== -1;
+        }}
 
         function escapeHtml(value) {{
-            const text = value === null || value === undefined ? "" : String(value);
+            var text = (value === null || value === undefined) ? "" : String(value);
             return text
                 .replace(/&/g, "&amp;")
                 .replace(/</g, "&lt;")
@@ -582,34 +571,49 @@ def create_html_page(folder_path, output_file):
         }}
 
         function renderCell(value, isFirst) {{
-            const safe = escapeHtml(value);
-            const decorated = safe.replace(/\\[SKIPPED\\]/g, '<span class="skipped">[SKIPPED]</span>');
-            const cls = isFirst ? ' class="first-col"' : '';
+            var safe = escapeHtml(value);
+            var decorated = safe.replace(/\\[SKIPPED\\]/g, '<span class="skipped">[SKIPPED]</span>');
+            var cls = isFirst ? ' class="first-col"' : '';
             return '<td' + cls + '>' + (decorated || '&nbsp;') + '</td>';
         }}
 
         function getVisibleIndexes(columns) {{
-            const hib = hibSelect.value;
-            return columns.map((c, idx) => {{
-                if (idx === 0) return idx; // always keep Test Number column
-                const upper = String(c).toUpperCase();
-                if (hib === "ALL") return idx;
-                if (hib === "OLDHIB" && upper.includes("OLDHIB")) return idx;
-                if (hib === "NEWHIB" && upper.includes("NEWHIB")) return idx;
-                return -1;
-            }}).filter((i) => i !== -1);
+            var hib = hibSelect.value;
+            var out = [];
+            for (var idx = 0; idx < columns.length; idx++) {{
+                if (idx === 0) {{ out.push(idx); continue; }}
+                var upper = String(columns[idx]).toUpperCase();
+                if (hib === "ALL") {{ out.push(idx); }}
+                else if (hib === "OLDHIB" && strIncludes(upper, "OLDHIB")) {{ out.push(idx); }}
+                else if (hib === "NEWHIB" && strIncludes(upper, "NEWHIB")) {{ out.push(idx); }}
+            }}
+            return out;
         }}
 
         function renderBlock(block) {{
-            const visible = getVisibleIndexes(block.columns);
-            const cols = visible.map((i) => block.columns[i]);
-            const head = '<tr>' + cols.map((c) => '<th>' + escapeHtml(c) + '</th>').join('') + '</tr>';
-            const body = block.rows.length === 0
-                ? '<tr><td colspan="' + cols.length + '" class="empty">No rows in this table.</td></tr>'
-                : block.rows.map((row) => {{
-                    const filteredCells = visible.map((i) => row[i]);
-                    return '<tr>' + filteredCells.map((cell, idx) => renderCell(cell, idx === 0)).join('') + '</tr>';
-                  }}).join('');
+            var visible = getVisibleIndexes(block.columns);
+            var cols = [];
+            for (var i = 0; i < visible.length; i++) {{ cols.push(block.columns[visible[i]]); }}
+
+            var headParts = [];
+            for (var h = 0; h < cols.length; h++) {{ headParts.push('<th>' + escapeHtml(cols[h]) + '</th>'); }}
+            var head = '<tr>' + headParts.join('') + '</tr>';
+
+            var body;
+            if (block.rows.length === 0) {{
+                body = '<tr><td colspan="' + cols.length + '" class="empty">No rows in this table.</td></tr>';
+            }} else {{
+                var rowParts = [];
+                for (var r = 0; r < block.rows.length; r++) {{
+                    var row = block.rows[r];
+                    var cellParts = [];
+                    for (var ci = 0; ci < visible.length; ci++) {{
+                        cellParts.push(renderCell(row[visible[ci]], ci === 0));
+                    }}
+                    rowParts.push('<tr>' + cellParts.join('') + '</tr>');
+                }}
+                body = rowParts.join('');
+            }}
 
             return (
                 '<div class="table-wrap">' +
@@ -628,56 +632,94 @@ def create_html_page(folder_path, output_file):
         }}
 
         function groupBySection(blocks) {{
-            const map = new Map();
-            blocks.forEach((b) => {{
-                if (!map.has(b.section)) map.set(b.section, []);
-                map.get(b.section).push(b);
-            }});
-            return map;
+            var order = [];
+            var map = {{}};
+            for (var i = 0; i < blocks.length; i++) {{
+                var s = blocks[i].section;
+                if (!Object.prototype.hasOwnProperty.call(map, s)) {{
+                    map[s] = [];
+                    order.push(s);
+                }}
+                map[s].push(blocks[i]);
+            }}
+            return {{ order: order, map: map }};
+        }}
+
+        function findFileByName(name) {{
+            for (var i = 0; i < files.length; i++) {{
+                if (files[i].name === name) return files[i];
+            }}
+            return null;
         }}
 
         function renderSelectedFile(fileName) {{
-            const selected = files.find((item) => item.name === fileName);
+            var selected = findFileByName(fileName);
             if (!selected) return;
 
-            metaModified.textContent = selected.modified;
+            metaModified.innerHTML = escapeHtml(selected.modified);
 
-            headerBody.innerHTML = (selected.header && selected.header.length)
-                ? selected.header.map((h) =>
-                    '<tr><td class="first-col">' + escapeHtml(h.field) + '</td><td>' + escapeHtml(h.value) + '</td></tr>'
-                  ).join('')
-                : '<tr><td colspan="2" class="empty">No header fields detected.</td></tr>';
+            if (selected.header && selected.header.length) {{
+                var hdrParts = [];
+                for (var i = 0; i < selected.header.length; i++) {{
+                    var h = selected.header[i];
+                    hdrParts.push('<tr><td class="first-col">' + escapeHtml(h.field) + '</td><td>' + escapeHtml(h.value) + '</td></tr>');
+                }}
+                headerBody.innerHTML = hdrParts.join('');
+            }} else {{
+                headerBody.innerHTML = '<tr><td colspan="2" class="empty">No header fields detected.</td></tr>';
+            }}
 
             if (!selected.blocks || selected.blocks.length === 0) {{
                 blocksContainer.innerHTML = '<h2 class="section-title">Parsed Tables</h2>' +
                     '<div class="table-wrap"><div class="empty">No structured tables detected in this file.</div></div>';
             }} else {{
-                const sectorFilter = sectorSelect.value;
-                const filteredBlocks = selected.blocks.filter((b) => {{
-                    if (sectorFilter === "ALL") return true;
-                    return String(b.title || "").toUpperCase().includes(sectorFilter);
-                }});
+                var sectorFilter = sectorSelect.value;
+                var filteredBlocks = [];
+                for (var b = 0; b < selected.blocks.length; b++) {{
+                    var blk = selected.blocks[b];
+                    if (sectorFilter === "ALL" || strIncludes(String(blk.title || "").toUpperCase(), sectorFilter)) {{
+                        filteredBlocks.push(blk);
+                    }}
+                }}
                 if (filteredBlocks.length === 0) {{
                     blocksContainer.innerHTML = '<div class="table-wrap"><div class="empty">No tables match the selected sector.</div></div>';
                 }} else {{
-                    const grouped = groupBySection(filteredBlocks);
-                    let html = '';
-                    grouped.forEach((blocks, section) => {{
+                    var grouped = groupBySection(filteredBlocks);
+                    var html = '';
+                    for (var gi = 0; gi < grouped.order.length; gi++) {{
+                        var section = grouped.order[gi];
                         html += '<h2 class="section-title">' + escapeHtml(section) + '</h2>';
-                        html += blocks.map(renderBlock).join('');
-                    }});
+                        var arr = grouped.map[section];
+                        for (var ai = 0; ai < arr.length; ai++) {{
+                            html += renderBlock(arr[ai]);
+                        }}
+                    }}
                     blocksContainer.innerHTML = html;
                 }}
             }}
 
-            notesBox.textContent = selected.notes && selected.notes.length
-                ? selected.notes
-                : 'No additional notes found in this file.';
+            var notesText = (selected.notes && selected.notes.length) ? selected.notes : 'No additional notes found in this file.';
+            if ('textContent' in notesBox) {{ notesBox.textContent = notesText; }}
+            else {{ notesBox.innerText = notesText; }}
         }}
 
-        fileSelect.addEventListener("change", (event) => renderSelectedFile(event.target.value));
-        hibSelect.addEventListener("change", () => renderSelectedFile(fileSelect.value));
-        sectorSelect.addEventListener("change", () => renderSelectedFile(fileSelect.value));
+        function onFileChange(event) {{
+            var target = event.target || event.srcElement;
+            renderSelectedFile(target.value);
+        }}
+        function onHibChange() {{ renderSelectedFile(fileSelect.value); }}
+        function onSectorChange() {{ renderSelectedFile(fileSelect.value); }}
+
+        if (fileSelect.addEventListener) {{
+            fileSelect.addEventListener("change", onFileChange, false);
+            hibSelect.addEventListener("change", onHibChange, false);
+            sectorSelect.addEventListener("change", onSectorChange, false);
+        }} else if (fileSelect.attachEvent) {{
+            fileSelect.attachEvent("onchange", function () {{ renderSelectedFile(fileSelect.value); }});
+            hibSelect.attachEvent("onchange", onHibChange);
+            sectorSelect.attachEvent("onchange", onSectorChange);
+        }}
+
         fileSelect.value = {json.dumps(first_file_name)};
         renderSelectedFile(fileSelect.value);
     </script>
