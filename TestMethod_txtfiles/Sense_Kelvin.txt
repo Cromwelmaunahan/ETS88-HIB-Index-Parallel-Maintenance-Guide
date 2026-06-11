@@ -5,7 +5,7 @@ CPP File Name:          Sense_Kelvin.cpp
 // ============================================================
 //  SECTORA TABLE
 // ============================================================
-//  TerResults Line                          | OldHIB-A                                                                     | NewHIB-A
+//  Test Number                          | OldHIB-A                                                                     | NewHIB-A
 //  ------------------------------------|------------------------------------------------------|------------------------------------------------------
 //  10097            | APU12 CH0: Force Voltage=2V, Measure Current | APU12 CH0: Force Voltage=2V, Measure Current
 //  10098            | APU12 CH0: Force Voltage=2V, Measure Current  | APU12 CH0: Force Voltage=2V, Measure Current
@@ -15,7 +15,7 @@ CPP File Name:          Sense_Kelvin.cpp
 // ============================================================
 //  SECTORB TABLE
 // ============================================================
-//  TerResults Line                          | OldHIB-B                                                                     | NewHIB-B
+//  Test Number                          | OldHIB-B                                                                     | NewHIB-B
 //  ------------------------------------|------------------------------------------------------|------------------------------------------------------
 //  20097            | APU12 CH0: Force Voltage=2V, Measure Current | APU12 CH0: Force Voltage=2V, Measure Current
 //  20098            | APU12 CH0: Force Voltage=2V, Measure Current  | APU12 CH0: Force Voltage=2V, Measure Current
@@ -26,7 +26,7 @@ CPP File Name:          Sense_Kelvin.cpp
 // ============================================================
 //  SECTORA TABLE
 // ============================================================
-//  TerResults Line                          | OldHIB-A                                                                     | NewHIB-A
+//  Test Number                          | OldHIB-A                                                                     | NewHIB-A
 //  ------------------------------------|------------------------------------------------------|------------------------------------------------------
 //  10097            | Lim_DF_1A,Lim_DF_2A_HPU1,Lim_DF_3A_HPU1,Lim_DF_4A_HPU1,Lim_DF_5A,Lim_SF_1A,Lim_SF_2A_HPU1,Lim_SF_4A_HPU1,Lim_SF_5A | KDA1,KDA2,KDA3,KDA4,KDA5,KSA1,KSA2,KSA4,KSA5
 //  10098            | Lim_DF_1A,Lim_DF_2A_HPU1,Lim_DF_3A_HPU1,Lim_DF_4A_HPU1,Lim_DF_5A,Lim_SF_1A,Lim_SF_2A_HPU1,Lim_SF_4A_HPU1,Lim_SF_5A,K009 | KDA1,KDA2,KDA3,KDA4,KDA5,KSA1,KSA2,KSA4,KSA5,KA9
@@ -36,7 +36,7 @@ CPP File Name:          Sense_Kelvin.cpp
 // ============================================================
 //  SECTORB TABLE
 // ============================================================
-//  TerResults Line                          | OldHIB-B                                                                     | NewHIB-B
+//  Test Number                          | OldHIB-B                                                                     | NewHIB-B
 //  ------------------------------------|------------------------------------------------------|------------------------------------------------------
 //  20097            | K016,K017,K018,K019                                  | KSA1,KSA2,KSA3,KSA1,KSA4,KSA5,KDA1,KDA2,KDA3,KDA1,KDA4,KDA5
 //  20098            | K016,K017,K018,K019,K009                             | KSA1,KSA2,KSA3,KSA1,KSA4,KSA5,KDA1,KDA2,KDA3,KDA1,KDA4,KDA5,KA9

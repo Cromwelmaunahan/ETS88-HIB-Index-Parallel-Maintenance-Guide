@@ -5,7 +5,7 @@ CPP File Name:          Shield_Checker.cpp
 // ============================================================
 //  SECTORA TABLE
 // ============================================================
-//  TerResults Line                          | OldHIB-A                                                                     | NewHIB-A
+//  Test Number                          | OldHIB-A                                                                     | NewHIB-A
 //  ------------------------------------|------------------------------------------------------|------------------------------------------------------
 //  20001 | [SKIPPED]                                       | APU12 CH3: Force Voltage = 0V; APU12 CH11: Force Current = 1mA, Measure Voltage
 //  20002 | [SKIPPED]                                       | APU12 CH3: Force Voltage = 0V; APU12 CH11: Force Voltage = 1V, Measure Current
@@ -19,7 +19,7 @@ CPP File Name:          Shield_Checker.cpp
 // ============================================================
 //  SECTORB TABLE
 // ============================================================
-//  TerResults Line                          | OldHIB-B                                                                     | NewHIB-B
+//  Test Number                          | OldHIB-B                                                                     | NewHIB-B
 //  ------------------------------------|------------------------------------------------------|------------------------------------------------------
 //  31001 | [SKIPPED]                                       | APU12 CH3: Force Voltage = 0V; APU12 CH11: Force Current = 1mA, Measure Voltage
 //  31002 | [SKIPPED]                                       | APU12 CH3: Force Voltage = 0V; APU12 CH11: Force Voltage = 1V, Measure Current
@@ -34,7 +34,7 @@ CPP File Name:          Shield_Checker.cpp
 // ============================================================
 //  SECTORA TABLE
 // ============================================================
-//  TerResults Line                          | OldHIB-A                                                                     | NewHIB-A
+//  Test Number                          | OldHIB-A                                                                     | NewHIB-A
 //  ------------------------------------|------------------------------------------------------|------------------------------------------------------
 //  20001 | [SKIPPED]                                       | KBC12,KBC13,KBC14,KBC15
 //  20002 | [SKIPPED]                                       | KBC13,KBC14,KBC15
@@ -48,7 +48,7 @@ CPP File Name:          Shield_Checker.cpp
 // ============================================================
 //  SECTORB TABLE
 // ============================================================
-//  TerResults Line                          | OldHIB-B                                                                     | NewHIB-B
+//  Test Number                          | OldHIB-B                                                                     | NewHIB-B
 //  ------------------------------------|------------------------------------------------------|------------------------------------------------------
 //  31001 | [SKIPPED]                                       | KBC12,KBC13,KBC14,KBC15
 //  31002 | [SKIPPED]                                       | KBC13,KBC14,KBC15
