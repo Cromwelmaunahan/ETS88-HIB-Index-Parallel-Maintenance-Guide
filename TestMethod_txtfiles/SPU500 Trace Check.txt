@@ -16,30 +16,30 @@ CPP File Name:          SPU500_Check.cpp
 // ============================================================
 //  Test Number                              | OldHIB-B                                                                     | NewHIB-B
 //  ------------------------------------|------------------------------------------------------|------------------------------------------------------
-//  2300    | SPU500 CH6: Force Voltage = 5V; SPU500 CH7: Force Current = 2mA, Measure Current | same
-//  2301    | SPU500 CH6: SP_FV=mdTestVolatge; SPU500 CH7: Force Current = 2mA, Measure Voltage | same
-//  2302    | SPU500 CH6: Force Voltage = 5V; SPU500 CH7: Force Current = 2mA, Measure Current | same
-//  2303    | SPU500 CH6: SP_FV=mdTestVolatge; SPU500 CH7: Force Current = 2mA, Measure Voltage | same
-//  2304    | SPU500 CH6: Force Voltage = 5V; SPU500 CH7: Force Current = 2mA, Measure Current | same
-//  2305    | SPU500 CH6: SP_FV=mdTestVolatge; SPU500 CH7: Force Current = 2mA, Measure Voltage | same
-//  2306    | APU12 CH2: Force Voltage = 10V, Force Current = 10mA, Measure Voltage | same
-//  2307    | APU12 CH2: Force Voltage = 10V, Force Current = 10mA, Measure Voltage | same
-//  2308    | APU12 CH2: Force Voltage = 10V, Force Current = 10mA, Measure Voltage | same
-//  2309    | APU12 CH2: Force Voltage = 10V, Force Current = 10mA, Measure Voltage | same
-//  2310    | APU12 CH0: Force Voltage = 10V, Force Current = 10mA, Measure Voltage | same
-//  2311    | APU12 CH0: Force Voltage = 10V, Force Current = 10mA, Measure Voltage | same
-//  2312    | APU12 CH0: Force Voltage = 10V, Force Current = 10mA, Measure Voltage | same
-//  2313    | APU12 CH6: Force Voltage = 10V, Force Current = 1mA, Measure Voltage | same
-//  2314    | APU12 CH6: Force Voltage = 10V, Force Current = 1mA, Measure Voltage | same
-//  2315    | APU12 CH8: Force Voltage = 10V, Force Current = 10mA, Measure Voltage | same
-//  2316    | APU12 CH8: Force Voltage = 10V, Force Current = 10mA, Measure Voltage | same
-//  2317    | APU12 CH8: Force Voltage = 10V, Force Current = 10mA, Measure Voltage | same
-//  2318    | APU12 CH8: Force Voltage = 10V, Force Current = 10mA, Measure Voltage | same
-//  2319    | APU12 CH6: Force Voltage = 10V, Force Current = 10mA, Measure Voltage | same
-//  2320    | APU12 CH6: Force Voltage = 10V, Force Current = 10mA, Measure Voltage | same
-//  2321    | APU12 CH6: Force Voltage = 10V, Force Current = 10mA, Measure Voltage | same
-//  2322    | APU12 CH0: Force Voltage = 10V, Force Current = 1mA, Measure Voltage | same
-//  2323    | APU12 CH0: Force Voltage = 10V, Force Current = 1mA, Measure Voltage | same
+//  2300    | SPU500 CH6: Force Voltage = 5V; SPU500 CH7: Force Current = 2mA, Measure Current | same as OldHIB-B
+//  2301    | SPU500 CH6: SP_FV=mdTestVolatge; SPU500 CH7: Force Current = 2mA, Measure Voltage | same as OldHIB-B
+//  2302    | SPU500 CH6: Force Voltage = 5V; SPU500 CH7: Force Current = 2mA, Measure Current | same as OldHIB-B
+//  2303    | SPU500 CH6: SP_FV=mdTestVolatge; SPU500 CH7: Force Current = 2mA, Measure Voltage | same as OldHIB-B
+//  2304    | SPU500 CH6: Force Voltage = 5V; SPU500 CH7: Force Current = 2mA, Measure Current | same as OldHIB-B
+//  2305    | SPU500 CH6: SP_FV=mdTestVolatge; SPU500 CH7: Force Current = 2mA, Measure Voltage | same as OldHIB-B
+//  2306    | APU12 CH2: Force Voltage = 10V, Force Current = 10mA, Measure Voltage | same as OldHIB-B
+//  2307    | APU12 CH2: Force Voltage = 10V, Force Current = 10mA, Measure Voltage | same as OldHIB-B
+//  2308    | APU12 CH2: Force Voltage = 10V, Force Current = 10mA, Measure Voltage | same as OldHIB-B
+//  2309    | APU12 CH2: Force Voltage = 10V, Force Current = 10mA, Measure Voltage | same as OldHIB-B
+//  2310    | APU12 CH0: Force Voltage = 10V, Force Current = 10mA, Measure Voltage | same as OldHIB-B
+//  2311    | APU12 CH0: Force Voltage = 10V, Force Current = 10mA, Measure Voltage | same as OldHIB-B
+//  2312    | APU12 CH0: Force Voltage = 10V, Force Current = 10mA, Measure Voltage | same as OldHIB-B
+//  2313    | APU12 CH6: Force Voltage = 10V, Force Current = 1mA, Measure Voltage | same as OldHIB-B
+//  2314    | APU12 CH6: Force Voltage = 10V, Force Current = 1mA, Measure Voltage | same as OldHIB-B
+//  2315    | APU12 CH8: Force Voltage = 10V, Force Current = 10mA, Measure Voltage | same as OldHIB-B
+//  2316    | APU12 CH8: Force Voltage = 10V, Force Current = 10mA, Measure Voltage | same as OldHIB-B
+//  2317    | APU12 CH8: Force Voltage = 10V, Force Current = 10mA, Measure Voltage | same as OldHIB-B
+//  2318    | APU12 CH8: Force Voltage = 10V, Force Current = 10mA, Measure Voltage | same as OldHIB-B
+//  2319    | APU12 CH6: Force Voltage = 10V, Force Current = 10mA, Measure Voltage | same as OldHIB-B
+//  2320    | APU12 CH6: Force Voltage = 10V, Force Current = 10mA, Measure Voltage | same as OldHIB-B
+//  2321    | APU12 CH6: Force Voltage = 10V, Force Current = 10mA, Measure Voltage | same as OldHIB-B
+//  2322    | APU12 CH0: Force Voltage = 10V, Force Current = 1mA, Measure Voltage | same as OldHIB-B
+//  2323    | APU12 CH0: Force Voltage = 10V, Force Current = 1mA, Measure Voltage | same as OldHIB-B
 // ============================================================
 
 
