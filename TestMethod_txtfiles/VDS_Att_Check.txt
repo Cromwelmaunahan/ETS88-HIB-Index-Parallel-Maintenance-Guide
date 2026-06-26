@@ -7,16 +7,16 @@ CPP File Name:          VDS_Att_Test.cpp
 // ============================================================
 //  Test Number                                  | OldHIB-A                                               | NewHIB-A
 //  -------------------------------------------------|--------------------------------------------------------|--------------------------------------------------------
-//1500 | HPU 99: Force Voltage = 32V, APU12 CH2: Force Voltage = 5V, APU12 CH0: Force Voltage = 5V, SPU112 CH2: Force Current = 0mA, Measure Voltage | HPU 99: Force Voltage = 32V, APU12 CH2: Force Voltage = 5V, APU12 CH0: Force Voltage = 5V, SPU112 CH2: Force Current = 0mA, Measure Voltage
-//1501 | HPU 99 active, SPU112 CH2: Force Current = 0mA, HPU 99: Measure Voltage, SPU112 CH2: Measure Voltage | HPU 99 active, SPU112 CH2: Force Current = 0mA, HPU 99: Measure Voltage, SPU112 CH2: Measure Voltage
-//1502 | PGA-B Calculate Gain_1 (at 32V and 85V) | PGA-B Calculate Gain_1 (at 32V and 85V)
-//1503 | PGA-B Derived Offset_1 = output_1 - Gain_1*input_1 | PGA-B Derived Offset_1 = output_1 - Gain_1*input_1
-//1504 | PGA-B Calculate Gain_2 (at 32V and 85V) | PGA-B Calculate Gain_2 (at 32V and 85V)
-//1505 | PGA-B Derived Offset_2 = output_1 - Gain_2*input_1 | PGA-B Derived Offset_2 = output_1 - Gain_2*input_1
-//1506 | PGA-A Calculate Gain_1 (at 32V and 85V) | PGA-A Calculate Gain_1 (at 32V and 85V)
-//1507 | PGA-A Derived Offset_1 = output_2 - Gain_1*input_2 | PGA-A Derived Offset_1 = output_2 - Gain_1*input_2
-//1508 | PGA-Addtional Calculate Gain_2 (at 32V and 85V) | PGA-Addtional Calculate Gain_2 (at 32V and 85V)
-//1509 | PGA-A Derived Offset_2 = output_2 - Gain_2*input_2 | PGA-A Derived Offset_2 = output_2 - Gain_2*input_2
+//15000 | HPU 99: Force Voltage = 32V, APU12 CH2: Force Voltage = 5V, APU12 CH0: Force Voltage = 5V, SPU112 CH2: Force Current = 0mA, Measure Voltage | HPU 99: Force Voltage = 32V, APU12 CH2: Force Voltage = 5V, APU12 CH0: Force Voltage = 5V, SPU112 CH2: Force Current = 0mA, Measure Voltage
+//15001 | HPU 99 active, SPU112 CH2: Force Current = 0mA, HPU 99: Measure Voltage, SPU112 CH2: Measure Voltage | HPU 99 active, SPU112 CH2: Force Current = 0mA, HPU 99: Measure Voltage, SPU112 CH2: Measure Voltage
+//15002 | PGA-B Calculate Gain_1 (at 32V and 85V) | PGA-B Calculate Gain_1 (at 32V and 85V)
+//15003 | PGA-B Derived Offset_1 = output_1 - Gain_1*input_1 | PGA-B Derived Offset_1 = output_1 - Gain_1*input_1
+//15004 | PGA-B Calculate Gain_2 (at 32V and 85V) | PGA-B Calculate Gain_2 (at 32V and 85V)
+//15005 | PGA-B Derived Offset_2 = output_1 - Gain_2*input_1 | PGA-B Derived Offset_2 = output_1 - Gain_2*input_1
+//15006 | PGA-A Calculate Gain_1 (at 32V and 85V) | PGA-A Calculate Gain_1 (at 32V and 85V)
+//15007 | PGA-A Derived Offset_1 = output_2 - Gain_1*input_2 | PGA-A Derived Offset_1 = output_2 - Gain_1*input_2
+//15008 | PGA-Addtional Calculate Gain_2 (at 32V and 85V) | PGA-Addtional Calculate Gain_2 (at 32V and 85V)
+//15009 | PGA-A Derived Offset_2 = output_2 - Gain_2*input_2 | PGA-A Derived Offset_2 = output_2 - Gain_2*input_2
 // ============================================================
 
 // ============================================================
@@ -33,16 +33,16 @@ CPP File Name:          VDS_Att_Test.cpp
 // ============================================================
 //  Test Number                                  | OldHIB-A                                               | NewHIB-A
 //  -------------------------------------------------|--------------------------------------------------------|--------------------------------------------------------
-//1500 | K100 K152_K156,K043,K010,K001 | K252_K256,KB36_KB37,K253,KA43,KA10,KA1
-//1501 | K100 K152_K156,K039 | K252_K256,KB36_KB37,K253,K39
-//1502 | K100 K152_K156,K039 | K252_K256,KB36_KB37,K253,K39
-//1503 | K100 K152_K156,K039 | K252_K256,KB36_KB37,K253,K39
-//1504 | K100 K152_K156,K039,K038 | K252_K256,KB36_KB37,K253,K39,K38
-//1505 | K100 K152_K156,K039,K038 | K252_K256,KB36_KB37,K253,K39,K38
-//1506 | K100,K039,K52_K56,K36_K37,K053 | K39,K152_K156,KA36_KA37,K153
-//1507 | K100,K039,K52_K56,K36_K37,K053 | K39,K152_K156,KA36_KA37,K153
-//1508 | K100,K039,K038,K52_K56,K36_K37,K053 | K39,K38,K152_K156,KA36_KA37,K153
-//1509 | K100,K039,K038,K52_K56,K36_K37,K053 | K39,K38,K152_K156,KA36_KA37,K153
+//15000 | K100,K152_K156,K136_K137,K153,K043,K010,K001 | K252_K256,KB36_KB37,K253,KA43,KA10,KA1
+//15001 | K100,K152_K156,K136_K137,K153,K039| K252_K256,KB36_KB37,K253,K39
+//15002 | K100,K152_K156,K136_K137,K153,K039 | K252_K256,KB36_KB37,K253,K39
+//15003 | K100,K152_K156,K136_K137,K153,K039 | K252_K256,KB36_KB37,K253,K39
+//15004 | K100,K152_K156,K136_K137,K153,K039,K038| K252_K256,KB36_KB37,K253,K39,K38
+//15005 | K100,K152_K156,K136_K137,K153,K039,K038 | K252_K256,KB36_KB37,K253,K39,K38
+//15006 | K100,K039,K52_K56,K36_K37,K053 | K39,K152_K156,KA36_KA37,K153
+//15007 | K100,K039,K52_K56,K36_K37,K053 | K39,K152_K156,KA36_KA37,K153
+//15008 | K100,K039,K038,K52_K56,K36_K37,K053 | K39,K38,K152_K156,KA36_KA37,K153
+//15009 | K100,K039,K038,K52_K56,K36_K37,K053 | K39,K38,K152_K156,KA36_KA37,K153
 // ============================================================
 
 // ============================================================
