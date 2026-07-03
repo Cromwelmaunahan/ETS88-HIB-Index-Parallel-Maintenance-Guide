@@ -7,16 +7,16 @@ CPP File Name:          VDS_Att_Test.cpp
 // ============================================================
 //  Test Number                                  | OldHIB-A                                               | NewHIB-A
 //  -------------------------------------------------|--------------------------------------------------------|--------------------------------------------------------
-//15000 | HPU 99: Force Voltage = 32V, APU12 CH2: Force Voltage = 5V, APU12 CH0: Force Voltage = -3V, SPU112 CH2: Force Current = 0mA, Measure Voltage | HPU 99: Force Voltage = 32V, APU12 CH2: Force Voltage = 5V, APU12 CH0: Force Voltage = 5V, SPU112 CH2: Force Current = 0mA, Measure Voltage
-//15001 | HPU 99 active, SPU112 CH2: Force Current = 0mA, HPU 99: Measure Voltage, SPU112 CH2: Measure Voltage | HPU 99 active, SPU112 CH2: Force Current = 0mA, HPU 99: Measure Voltage, SPU112 CH2: Measure Voltage
-//15002 | PGA-B Calculate Gain_1 (at 32V and 85V) | PGA-B Calculate Gain_1 (at 32V and 85V)
-//15003 | PGA-B Derived Offset_1 = output_1 - Gain_1*input_1 | PGA-B Derived Offset_1 = output_1 - Gain_1*input_1
-//15004 | PGA-B Calculate Gain_2 (at 32V and 85V) | PGA-B Calculate Gain_2 (at 32V and 85V)
-//15005 | PGA-B Derived Offset_2 = output_1 - Gain_2*input_1 | PGA-B Derived Offset_2 = output_1 - Gain_2*input_1
-//15006 | PGA-A Calculate Gain_1 (at 32V and 85V) | PGA-A Calculate Gain_1 (at 32V and 85V)
-//15007 | PGA-A Derived Offset_1 = output_2 - Gain_1*input_2 | PGA-A Derived Offset_1 = output_2 - Gain_1*input_2
-//15008 | PGA-Addtional Calculate Gain_2 (at 32V and 85V) | PGA-Addtional Calculate Gain_2 (at 32V and 85V)
-//15009 | PGA-A Derived Offset_2 = output_2 - Gain_2*input_2 | PGA-A Derived Offset_2 = output_2 - Gain_2*input_2
+//15000 | HPU 99: Force Voltage = 32V, APU12 CH2: Force Voltage = 5V, APU12 CH0: Force Voltage = -3V, SPU112 CH2: Force Current = 0mA, Measure Voltage | same as OldHIB-A 
+//15001 | HPU 99: Force Voltage = 32V, SPU112 CH2: Force Current = 0mA, HPU 99: Measure Voltage, SPU112 CH2: Measure Voltage | same as OldHIB-A
+//15002 | HPU 99: Force Voltage = 85V, PGA-B Calculate Gain_1 (at 32V and 85V) | same as OldHIB-A
+//15003 | HPU 99: Force Voltage = 85V, PGA-B Derived Offset_1 = output_1 - Gain_1*input_1 | same as OldHIB-A
+//15004 | HPU 99: Force Voltage = 85V, PGA-B Calculate Gain_2 (at 32V and 85V) | same as OldHIB-A
+//15005 | HPU 99: Force Voltage = 85V ,PGA-B Derived Offset_2 = output_1 - Gain_2*input_1 |same as OldHIB-A
+//15006 | HPU 94: Force Voltage = 85V, PGA-A Calculate Gain_1 (at 32V and 85V) | same as OldHIB-A
+//15007 | HPU 94: Force Voltage = 85V, PGA-A Derived Offset_1 = output_2 - Gain_1*input_2 | same as OldHIB-A
+//15008 | HPU 94: Force Voltage = 85V, PGA-A Calculate Gain_2 (at 32V and 85V) | same as OldHIB-A
+//15009 | HPU 94: Force Voltage = 85V, PGA-A Derived Offset_2 = output_2 - Gain_2*input_2 | same as OldHIB-A
 // ============================================================
 
 // ============================================================
