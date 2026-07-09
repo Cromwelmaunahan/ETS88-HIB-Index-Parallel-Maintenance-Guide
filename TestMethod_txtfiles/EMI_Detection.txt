@@ -7,14 +7,14 @@ CPP File Name:          EMI_Detection.cpp
 // ============================================================
 //  Test Number                              | OldHIB-A                                                                     | NewHIB-A
 //  ------------------------------------|------------------------------------------------------|------------------------------------------------------
-//  17050 | APU12 CH6: Force Current = 1uA, Measure Voltage ADCMODE, blockread(-1), namearray(IDSS_datapoints_with_ITC, NAMEARRAY_APU12ADC) | same
-//  17051 | APU12 CH6: Force Current = 1uA, Measure Voltage ADCMODE, blockread(-1), namearray(IDSS_datapoints_with_ITC, NAMEARRAY_APU12ADC) | same
-//  17052 | APU12 CH6: Force Current = 1uA, Measure Voltage ADCMODE, blockread(-1), namearray(IDSS_datapoints_with_ITC, NAMEARRAY_APU12ADC) | same
-//  17053 | APU12 CH6: Force Current = 1uA, Measure Voltage ADCMODE, blockread(-1), namearray(IDSS_datapoints_with_ITC, NAMEARRAY_APU12ADC) | same
-//  17054 | APU12 CH6: Force Current = 1uA, Measure Voltage ADCMODE, blockread(-1), namearray(IDSS_datapoints_with_ITC, NAMEARRAY_APU12ADC) | same
-//  17055 | APU12 CH6: Force Current = 1uA, Measure Voltage ADCMODE, blockread(-1), namearray(IDSS_datapoints_with_ITC, NAMEARRAY_APU12ADC) | same
-//  17056 | APU12 CH6: Force Current = 1uA, Measure Voltage ADCMODE, blockread(-1), namearray(IDSS_datapoints_withoutITC, NAMEARRAY_APU12ADC) | same
-//  17057 | APU12 CH6: Force Current = 1uA, Measure Voltage ADCMODE, blockread(-1), namearray(IDSS_datapoints_withoutITC, NAMEARRAY_APU12ADC) | same
+//  17050 | APU12 CH6: Force Current = 1uA, Measure Voltage ADCMODE, blockread(-1), namearray(IDSS_datapoints_with_ITC, NAMEARRAY_APU12ADC) | same as OldHIB-A
+//  17051 | APU12 CH6: Force Current = 1uA, Measure Voltage ADCMODE, blockread(-1), namearray(IDSS_datapoints_with_ITC, NAMEARRAY_APU12ADC) | same as OldHIB-A
+//  17052 | APU12 CH6: Force Current = 1uA, Measure Voltage ADCMODE, blockread(-1), namearray(IDSS_datapoints_with_ITC, NAMEARRAY_APU12ADC) | same as OldHIB-A
+//  17053 | APU12 CH6: Force Current = 1uA, Measure Voltage ADCMODE, blockread(-1), namearray(IDSS_datapoints_with_ITC, NAMEARRAY_APU12ADC) | same as OldHIB-A
+//  17054 | APU12 CH6: Force Current = 1uA, Measure Voltage ADCMODE, blockread(-1), namearray(IDSS_datapoints_with_ITC, NAMEARRAY_APU12ADC) | same as OldHIB-A
+//  17055 | APU12 CH6: Force Current = 1uA, Measure Voltage ADCMODE, blockread(-1), namearray(IDSS_datapoints_with_ITC, NAMEARRAY_APU12ADC) | same as OldHIB-A
+//  17056 | APU12 CH6: Force Current = 1uA, Measure Voltage ADCMODE, blockread(-1), namearray(IDSS_datapoints_withoutITC, NAMEARRAY_APU12ADC) | same as OldHIB-A
+//  17057 | APU12 CH6: Force Current = 1uA, Measure Voltage ADCMODE, blockread(-1), namearray(IDSS_datapoints_withoutITC, NAMEARRAY_APU12ADC) | same as OldHIB-A
 // ============================================================
 
 // ============================================================
